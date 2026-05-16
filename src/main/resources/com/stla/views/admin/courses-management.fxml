@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.admin.CoursesManagementController"
+      spacing="16" style="-fx-padding: 28 32; -fx-background-color: #0a0f1e;">
+    <HBox alignment="CENTER_LEFT" spacing="16">
+        <Label text="📚 Courses List" styleClass="heading-1" HBox.hgrow="ALWAYS"/>
+        <ComboBox fx:id="statusFilter" prefWidth="150"/>
+    </HBox>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+        <VBox fx:id="coursesContainer" spacing="4"/>
+    </ScrollPane>
+</VBox>

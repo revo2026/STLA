@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.admin.CourseReviewDetailController"
+      spacing="0" stylesheets="@../../css/app.css, @../../css/cards.css, @../../css/buttons.css, @../../css/player.css">
+    <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <Button fx:id="backBtn" text="Back to Reviews" styleClass="btn-outline, btn-sm" onAction="#handleBack"/>
+        <Label fx:id="pageTitleLabel" text="Course Review" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;" HBox.hgrow="ALWAYS"/>
+    </HBox>
+
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS"
+                style="-fx-background-color: transparent; -fx-padding: 16 0 0 0;">
+        <VBox fx:id="detailContainer" spacing="20"/>
+    </ScrollPane>
+</VBox>

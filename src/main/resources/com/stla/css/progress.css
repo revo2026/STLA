@@ -1,0 +1,36 @@
+.course-progress-bar {
+    -fx-accent: linear-gradient(to right, #7c3aed, #14b8a6);
+}
+.course-progress-bar .track {
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-background-radius: 6;
+}
+.course-progress-bar .bar {
+    -fx-background-radius: 6;
+    -fx-background-insets: 0;
+}
+
+.course-player-root .course-progress-bar .track {
+    -fx-background-color: #334155;
+}
+.course-player-root .course-progress-bar {
+    -fx-accent: linear-gradient(to right, #a78bfa, #2dd4bf);
+}
+
+.lesson-completed-badge {
+    -fx-background-color: rgba(52, 211, 153, 0.2);
+    -fx-text-fill: #34d399;
+    -fx-padding: 6 12;
+    -fx-background-radius: 20;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+.course-completed-badge {
+    -fx-background-color: linear-gradient(to right, #7c3aed, #14b8a6);
+    -fx-text-fill: white;
+    -fx-padding: 4 10;
+    -fx-background-radius: 12;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}

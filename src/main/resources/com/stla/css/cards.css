@@ -1,0 +1,169 @@
+/* ============================================
+   STLA Desktop — Card Styles (Premium Dark)
+   ============================================ */
+
+.card {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1;
+    -fx-padding: 24;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.38), 48, 0.10, 0, 16);
+}
+
+.card:hover {
+    -fx-border-color: rgba(45, 212, 191, 0.30);
+    -fx-effect: dropshadow(gaussian, rgba(45, 212, 191, 0.12), 24, 0, 0, 8);
+}
+
+.stat-card {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1;
+    -fx-padding: 20 24;
+    -fx-pref-width: 240;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.30), 32, 0.08, 0, 12);
+}
+
+.stat-card .stat-value {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0f6ff;
+}
+
+.stat-card .stat-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #ffffff;
+}
+
+.stat-card .stat-icon {
+    -fx-font-size: 24px;
+    -fx-text-fill: #2dd4bf;
+}
+
+.stat-card-primary {
+    -fx-background-color: linear-gradient(to bottom right, rgba(45, 212, 191, 0.22), rgba(14, 165, 233, 0.18));
+    -fx-border-color: rgba(45, 212, 191, 0.30);
+}
+
+.stat-card-primary .stat-value {
+    -fx-text-fill: #f0f6ff;
+}
+
+.stat-card-primary .stat-label {
+    -fx-text-fill: #ffffff;
+}
+
+.course-card {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1;
+    -fx-pref-width: 280;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.28), 24, 0.08, 0, 8);
+}
+
+.course-card:hover {
+    -fx-border-color: rgba(45, 212, 191, 0.40);
+}
+
+.course-card .course-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0f6ff;
+}
+
+.course-card .course-price {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2dd4bf;
+}
+
+.course-card .course-rating,
+.catalog-course-card .course-rating {
+    -fx-text-fill: #f59e0b;
+    -fx-font-size: 13px;
+}
+
+.notification-card {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-background-radius: 12;
+    -fx-padding: 14 18;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-width: 0 0 1 0;
+}
+
+.notification-card-unread {
+    -fx-background-color: rgba(45, 212, 191, 0.08);
+    -fx-border-color: #2dd4bf;
+    -fx-border-width: 0 0 0 3;
+}
+
+.upload-card {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-background-radius: 14;
+    -fx-border-radius: 14;
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+    -fx-border-width: 2;
+    -fx-border-style: segments(8, 6);
+    -fx-padding: 16;
+    -fx-cursor: hand;
+    -fx-min-height: 120;
+}
+
+.upload-card:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-border-color: rgba(45, 212, 191, 0.40);
+}
+
+.upload-card-success {
+    -fx-border-color: #22c55e;
+    -fx-border-style: solid;
+    -fx-background-color: rgba(34, 197, 94, 0.10);
+}
+
+.verification-card {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 16 20;
+}
+
+.verification-card-pending {
+    -fx-border-color: #f59e0b;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: rgba(245, 158, 11, 0.08);
+}
+
+.verification-card-verified {
+    -fx-border-color: #22c55e;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: rgba(34, 197, 94, 0.08);
+}
+
+.verification-card-rejected {
+    -fx-border-color: #ef4444;
+    -fx-border-width: 0 0 0 4;
+    -fx-background-color: rgba(239, 68, 68, 0.08);
+}
+
+.document-preview {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 8;
+    -fx-padding: 8;
+    -fx-alignment: center;
+}
+
+.badge-info {
+    -fx-background-color: rgba(14, 165, 233, 0.15);
+    -fx-text-fill: #0ea5e9;
+}
+
+.badge-purple {
+    -fx-background-color: rgba(99, 102, 241, 0.15);
+    -fx-text-fill: #818cf8;
+}

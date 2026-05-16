@@ -1,0 +1,431 @@
+/* ============================================
+   STLA Premium Dark — Global Glass Theme
+   Loaded last; harmonizes app-wide visuals
+   ============================================ */
+
+/* --- Surfaces --- */
+.root,
+.content-area,
+.login-container,
+.catalog-page,
+.notifications-page,
+.withdrawals-page,
+.checkout-page,
+.payment-page {
+    -fx-background-color: #0a0f1e;
+}
+
+.scroll-pane,
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+/* --- Glass cards --- */
+.card,
+.stat-card,
+.course-card,
+.catalog-course-card,
+.login-card,
+.auth-card,
+.profile-section,
+.notification-card,
+.upload-card,
+.verification-card,
+.top-header {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.38), 48, 0.10, 0, 16);
+}
+
+.card:hover,
+.stat-card:hover,
+.course-card:hover,
+.catalog-course-card:hover {
+    -fx-border-color: rgba(45, 212, 191, 0.35);
+    -fx-effect: dropshadow(gaussian, rgba(45, 212, 191, 0.15), 24, 0, 0, 8);
+}
+
+.stat-card-primary {
+    -fx-background-color: linear-gradient(to bottom right, rgba(45, 212, 191, 0.25), rgba(14, 165, 233, 0.20));
+    -fx-border-color: rgba(45, 212, 191, 0.30);
+}
+
+/* --- Typography --- */
+.heading-1, .heading-2, .heading-3,
+.page-title, .section-title,
+.login-title, .auth-title,
+.course-card .course-title,
+.catalog-course-card .course-title,
+.stat-card .stat-value {
+    -fx-text-fill: #f0f6ff;
+}
+
+.subtitle, .text-secondary, .page-subtitle,
+.login-subtitle, .auth-subtitle,
+.stat-card .stat-label,
+.section-action,
+.form-label, .auth-form-label {
+    -fx-text-fill: #ffffff;
+}
+
+.text-primary {
+    -fx-text-fill: #f0f6ff;
+}
+
+.text-accent {
+    -fx-text-fill: #2dd4bf;
+}
+
+.text-danger {
+    -fx-text-fill: #ef4444;
+}
+
+.text-success {
+    -fx-text-fill: #22c55e;
+}
+
+/* --- Inputs --- */
+.text-field, .password-field, .text-area,
+.combo-box, .search-field {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-text-fill: #f0f6ff;
+    -fx-prompt-text-fill: #4a6080;
+    -fx-padding: 0 16 0 16;
+}
+
+.text-field:focused, .password-field:focused, .text-area:focused,
+.combo-box:focused, .search-field:focused {
+    -fx-border-color: rgba(45, 212, 191, 0.55);
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-effect: dropshadow(gaussian, rgba(45, 212, 191, 0.20), 10, 0, 0, 0);
+}
+
+.text-field:hover, .password-field:hover, .text-area:hover,
+.combo-box:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+}
+
+.combo-box-popup .list-view {
+    -fx-background-color: #111827;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+}
+
+.combo-box-popup .list-view .list-cell {
+    -fx-text-fill: #f0f6ff;
+}
+
+.combo-box-popup .list-view .list-cell:hover {
+    -fx-background-color: rgba(45, 212, 191, 0.12);
+}
+
+.combo-box-popup .list-view .list-cell:selected {
+    -fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9);
+    -fx-text-fill: #fff;
+}
+
+/* --- Buttons --- */
+.button {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1;
+    -fx-text-fill: #f0f6ff;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+}
+
+.btn-primary {
+    -fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9);
+    -fx-text-fill: #061018;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(45, 212, 191, 0.27), 20, 0.15, 0, 4);
+}
+
+.btn-gradient {
+    -fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9);
+    -fx-text-fill: #061018;
+    -fx-border-color: transparent;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-effect: dropshadow(gaussian, rgba(45, 212, 191, 0.27), 20, 0.15, 0, 4);
+}
+
+.btn-outline {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+    -fx-text-fill: #8899b4;
+}
+
+.btn-outline:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-border-color: rgba(45, 212, 191, 0.40);
+    -fx-text-fill: #f0f6ff;
+}
+
+.btn-ghost:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-text-fill: #2dd4bf;
+}
+
+.role-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-text-fill: #8899b4;
+}
+
+.role-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-border-color: rgba(45, 212, 191, 0.35);
+    -fx-text-fill: #f0f6ff;
+}
+
+.role-btn-active {
+    -fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9);
+    -fx-text-fill: #061018;
+    -fx-border-color: transparent;
+}
+
+.link-btn {
+    -fx-text-fill: #2dd4bf;
+}
+
+.link-btn:hover {
+    -fx-text-fill: #0ea5e9;
+}
+
+/* --- Chips --- */
+.chip {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-text-fill: #fff;
+}
+
+.chip:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-border-color: rgba(45, 212, 191, 0.35);
+    -fx-text-fill: #f0f6ff;
+}
+
+.chip-selected {
+    -fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9);
+    -fx-text-fill: #fff;
+    -fx-border-color: transparent;
+}
+
+/* --- Tables --- */
+.table-view {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: #ffffff;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent rgba(255, 255, 255, 0.06) transparent;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: rgba(45, 212, 191, 0.08);
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: rgba(45, 212, 191, 0.18);
+}
+
+.table-view .table-cell {
+    -fx-text-fill: #f0f6ff;
+}
+
+/* --- Lists --- */
+.list-view {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+}
+
+.list-view .list-cell {
+    -fx-text-fill: #f0f6ff;
+    -fx-background-color: transparent;
+}
+
+.list-view .list-cell:hover {
+    -fx-background-color: rgba(45, 212, 191, 0.08);
+}
+
+.list-view .list-cell:selected {
+    -fx-background-color: linear-gradient(to right, rgba(45, 212, 191, 0.35), rgba(14, 165, 233, 0.30));
+    -fx-text-fill: #fff;
+}
+
+/* --- Tabs --- */
+.tab-pane .tab-header-area .tab {
+    -fx-background-color: transparent;
+}
+
+.tab-pane .tab-header-area .tab .tab-label {
+    -fx-text-fill: #ffffff;
+}
+
+.tab-pane .tab-header-area .tab:selected {
+    -fx-background-color: rgba(45, 212, 191, 0.15);
+}
+
+.tab-pane .tab-header-area .tab:selected .tab-label {
+    -fx-text-fill: #2dd4bf;
+}
+
+/* --- Check / Radio --- */
+.check-box, .radio-button {
+    -fx-text-fill: #8899b4;
+}
+
+.check-box:selected .box, .radio-button:selected .radio {
+    -fx-background-color: #2dd4bf;
+    -fx-border-color: #2dd4bf;
+}
+
+/* --- Progress --- */
+.progress-indicator .indicator .segment {
+    -fx-background-color: #2dd4bf;
+}
+
+.progress-bar > .bar {
+    -fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9);
+    -fx-background-radius: 6;
+}
+
+.progress-bar > .track {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 6;
+}
+
+/* --- Messages --- */
+.error-label {
+    -fx-text-fill: #ff6b6b;
+    -fx-background-color: rgba(239, 68, 68, 0.10);
+    -fx-border-color: rgba(239, 68, 68, 0.25);
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 8 12;
+}
+
+/* --- Tooltips --- */
+.tooltip {
+    -fx-background-color: rgba(17, 24, 39, 0.95);
+    -fx-text-fill: #f0f6ff;
+    -fx-background-radius: 8;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-radius: 8;
+    -fx-border-width: 1;
+}
+
+/* --- Scrollbars --- */
+.scroll-bar:vertical .thumb,
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.18);
+    -fx-background-radius: 8;
+}
+
+/* --- Header / Sidebar accents --- */
+.top-header {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-border-color: transparent transparent rgba(255, 255, 255, 0.08) transparent;
+}
+
+.sidebar {
+    -fx-background-color: linear-gradient(to bottom, #0a0f1e, #111827, #0a1628);
+}
+
+.sidebar-item-active {
+    -fx-border-color: transparent transparent transparent #2dd4bf;
+}
+
+.sidebar-user-role {
+    -fx-text-fill: #2dd4bf;
+}
+
+.notification-bell {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+}
+
+/* --- Stepper --- */
+.stepper-active {
+    -fx-text-fill: #2dd4bf;
+    -fx-background-color: rgba(45, 212, 191, 0.15);
+}
+
+.stepper-inactive {
+    -fx-text-fill: #4a6080;
+}
+
+.stepper-done {
+    -fx-text-fill: #22c55e;
+}
+
+/* --- Badges --- */
+.badge-student {
+    -fx-background-color: rgba(45, 212, 191, 0.15);
+    -fx-text-fill: #2dd4bf;
+}
+
+.badge-instructor {
+    -fx-background-color: rgba(245, 158, 11, 0.15);
+    -fx-text-fill: #f59e0b;
+}
+
+.badge-success {
+    -fx-background-color: rgba(34, 197, 94, 0.15);
+    -fx-text-fill: #22c55e;
+}
+
+.badge-warning {
+    -fx-background-color: rgba(245, 158, 11, 0.15);
+    -fx-text-fill: #f59e0b;
+}
+
+.badge-danger {
+    -fx-background-color: rgba(239, 68, 68, 0.15);
+    -fx-text-fill: #ef4444;
+}
+
+/* --- Separator --- */
+.separator .line {
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+}
+
+/* --- Hyperlink --- */
+.hyperlink {
+    -fx-text-fill: #2dd4bf;
+}
+
+.hyperlink:hover {
+    -fx-text-fill: #0ea5e9;
+}
+
+/* --- Lesson sidebar (course player) --- */
+.lesson-sidebar {
+    -fx-background-color: #111827;
+    -fx-border-color: rgba(255, 255, 255, 0.08) transparent rgba(255, 255, 255, 0.08) rgba(255, 255, 255, 0.08);
+}
+
+.lesson-sidebar-header {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+}
+
+.lesson-sidebar-title {
+    -fx-text-fill: #f0f6ff;
+}
+
+.lesson-sidebar-subtitle {
+    -fx-text-fill: #8899b4;
+}

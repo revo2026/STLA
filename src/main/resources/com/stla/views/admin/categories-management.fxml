@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.admin.CategoriesManagementController"
+      spacing="16" style="-fx-padding: 28 32; -fx-background-color: #0a0f1e;">
+    <Label text="📁 Categories Management" styleClass="heading-1"/>
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <TextField fx:id="nameField" promptText="Category Name" prefWidth="200"/>
+        <TextField fx:id="slugField" promptText="Slug" prefWidth="150"/>
+        <TextField fx:id="descField" promptText="Description" prefWidth="200"/>
+        <Button text="➕ Add Category" styleClass="btn-secondary" onAction="#handleAddCategory"/>
+    </HBox>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+        <VBox fx:id="catsContainer" spacing="4"/>
+    </ScrollPane>
+</VBox>

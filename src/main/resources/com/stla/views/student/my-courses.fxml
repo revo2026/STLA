@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.student.MyCoursesController"
+      spacing="20" style="-fx-padding: 28 32; -fx-background-color: #0a0f1e;">
+    <Label text="My Courses" styleClass="heading-1"/>
+    <Label text="Your enrolled courses and learning progress" styleClass="subtitle"/>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+        <VBox fx:id="coursesContainer" spacing="12"/>
+    </ScrollPane>
+</VBox>

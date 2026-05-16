@@ -1,0 +1,89 @@
+@startuml STLA_Observer_Pattern
+title STLA Desktop — Observer Pattern
+skinparam classAttributeIconSize 0
+
+package "com.stla.patterns.observer" {
+  class EventBus <<Subject>> {
+    - {static} INSTANCE: EventBus
+    - listeners: Map<EventType, List<EventListener>>
+    + {static} getInstance(): EventBus
+    + subscribe(type, listener): void
+    + unsubscribe(type, listener): void
+    + publish(event): void
+  }
+
+  interface EventListener <<Observer>> {
+    + onEvent(event): void
+  }
+
+  record AppEvent {
+    type: EventType
+    actorProfileId: String
+    targetId: String
+    message: String
+    --
+    enum EventType
+  }
+
+  class NotificationObserver <<ConcreteObserver>> {
+    + {static} register(): void
+    + onEvent(event): void
+  }
+
+  note right of AppEvent
+    AppEventType is **not** a separate class.
+    Event types are AppEvent.EventType enum
+    inside AppEvent record.
+  end note
+
+  note as NObs
+    **StudentNotificationObserver**,
+    **InstructorNotificationObserver**,
+    **AdminNotificationObserver** —
+    Class not found in current codebase.
+    Single NotificationObserver handles all types.
+  end note
+}
+
+EventListener <|.. NotificationObserver
+EventBus o-- EventListener : subscribers
+EventBus ..> AppEvent : publish
+
+package "com.stla.services" {
+  class NotificationService {
+    + handleAppEvent(event): void
+    + notifyCourseSubmitted(...)
+    + notifyCourseApproved(...)
+  }
+  class CourseService
+  class PaymentService
+  class QuizService
+  class LearningProgressService
+  class WalletService
+  class AdminService
+  class AuthService
+}
+
+NotificationObserver --> NotificationService
+NotificationObserver ..> EventBus : register()
+
+CourseService ..> EventBus : publish
+PaymentService ..> EventBus : publish
+QuizService ..> EventBus : publish
+LearningProgressService ..> EventBus : publish
+WalletService ..> EventBus : publish
+AdminService ..> EventBus : publish
+AuthService ..> EventBus : publish
+
+package "com.stla.patterns.facade" {
+  class CoursePublishFacade
+}
+CoursePublishFacade ..> EventBus : publish
+
+note right of EventBus
+  Singleton subject. Services publish
+  AppEvent; NotificationObserver persists
+  notifications via NotificationService.
+end note
+
+@enduml

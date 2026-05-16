@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml" fitToWidth="true" hbarPolicy="NEVER"
+            fx:controller="com.stla.ui.student.QuizResultController" styleClass="quiz-page">
+    <VBox fx:id="rootBox" spacing="20" style="-fx-padding: 24;">
+        <VBox styleClass="quiz-header-card" spacing="8" alignment="CENTER">
+            <Label fx:id="quizTitleLabel" text="Quiz Results" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+            <Label fx:id="resultBadgeLabel" text="PASSED" style="-fx-font-size: 18px; -fx-font-weight: bold;"/>
+            <Label fx:id="scoreLabel" text="0%" styleClass="quiz-result-score"/>
+            <HBox spacing="24" alignment="CENTER">
+                <Label fx:id="pointsLabel" text="0 / 0 pts"/>
+                <Label fx:id="attemptLabel" text="Attempt 1"/>
+                <Label fx:id="passingLabel" text="Passing: 70%"/>
+            </HBox>
+            <HBox spacing="16" alignment="CENTER">
+                <Label fx:id="correctLabel" text="✅ 0 correct"/>
+                <Label fx:id="wrongLabel" text="❌ 0 wrong"/>
+            </HBox>
+        </VBox>
+
+        <VBox fx:id="reviewBox" spacing="12" visible="false" managed="false"/>
+
+        <HBox spacing="12" alignment="CENTER">
+            <Button fx:id="reviewButton" text="Review Answers" styleClass="btn-outline" onAction="#handleReview" visible="false" managed="false"/>
+            <Button fx:id="continueButton" text="Continue Course" styleClass="btn-primary" onAction="#handleContinue"/>
+        </HBox>
+    </VBox>
+</ScrollPane>

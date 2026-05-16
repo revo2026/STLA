@@ -1,0 +1,130 @@
+/* STLA Student Quiz Experience */
+
+.quiz-page {
+    -fx-background-color: #0a0f1e;
+}
+
+.quiz-header-card {
+    -fx-background-color: linear-gradient(to bottom right, #4C1D95, #7C3AED);
+    -fx-background-radius: 16;
+    -fx-padding: 20 24;
+    -fx-effect: dropshadow(gaussian, rgba(124,58,237,0.25), 16, 0, 0, 6);
+}
+
+.quiz-header-card .label {
+    -fx-text-fill: white;
+}
+
+.quiz-timer {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #EDE9FE;
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-background-radius: 12;
+    -fx-padding: 8 16;
+}
+
+.quiz-timer-warning {
+    -fx-text-fill: #FCA5A5;
+    -fx-background-color: rgba(239,68,68,0.25);
+}
+
+.quiz-nav-btn {
+    -fx-min-width: 36;
+    -fx-min-height: 36;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+
+.quiz-nav-current {
+    -fx-background-color: #7C3AED;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.quiz-nav-answered {
+    -fx-background-color: #10B981;
+    -fx-text-fill: white;
+}
+
+.quiz-nav-default {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-text-fill: #8899b4;
+}
+
+.quiz-question-card {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255,255,255,0.12);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-padding: 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 10, 0, 0, 3);
+}
+
+.quiz-option-row {
+    -fx-background-color: #111827;
+    -fx-border-color: rgba(255,255,255,0.12);
+    -fx-border-radius: 10;
+    -fx-background-radius: 10;
+    -fx-padding: 12 16;
+    -fx-cursor: hand;
+}
+
+.quiz-option-selected {
+    -fx-background-color: #EDE9FE;
+    -fx-border-color: #7C3AED;
+}
+
+.quiz-summary-card {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(255,255,255,0.12);
+    -fx-border-radius: 14;
+    -fx-padding: 16;
+}
+
+.quiz-summary-locked {
+    -fx-background-color: #111827;
+    -fx-border-color: rgba(255,255,255,0.14);
+    -fx-opacity: 0.92;
+}
+
+.quiz-badge-quiz {
+    -fx-background-color: #EDE9FE;
+    -fx-text-fill: #6D28D9;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-padding: 3 8;
+    -fx-background-radius: 8;
+}
+
+.quiz-badge-pass {
+    -fx-background-color: #D1FAE5;
+    -fx-text-fill: #047857;
+}
+
+.quiz-badge-fail {
+    -fx-background-color: #FEE2E2;
+    -fx-text-fill: #B91C1C;
+}
+
+.quiz-badge-locked {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-text-fill: #8899b4;
+}
+
+.quiz-result-score {
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+}
+
+.dark-theme .quiz-page {
+    -fx-background-color: #0a0f1e;
+}
+
+.dark-theme .quiz-question-card,
+.dark-theme .quiz-summary-card {
+    -fx-background-color: #111827;
+    -fx-border-color: #2A3544;
+}

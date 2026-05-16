@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.instructor.QuizBuilderController"
+            fx:id="rootPane" prefWidth="1200" prefHeight="800"
+            stylesheets="@../../css/app.css, @../../css/cards.css, @../../css/forms.css, @../../css/buttons.css, @../../css/animations.css, @../../css/quiz-builder.css, @../../css/dark-theme.css">
+
+    <!-- TOP: Header Bar -->
+    <top>
+        <VBox styleClass="content-area" spacing="8">
+            <padding><Insets top="14" right="24" bottom="14" left="24"/></padding>
+            <HBox spacing="12" alignment="CENTER_LEFT">
+                <Button fx:id="btnBack" text="Back to Course" styleClass="btn-outline, btn-sm" onAction="#handleBack"/>
+                <Label fx:id="breadcrumbLabel" text="" style="-fx-text-fill: #8899b4; -fx-font-size: 13px;"/>
+            </HBox>
+            <HBox spacing="16" alignment="CENTER_LEFT">
+                <Label fx:id="quizTitle" text="📝 Quiz Builder" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="btnPreview" text="👁 Preview" styleClass="btn-outline, btn-sm" onAction="#handlePreviewQuiz"/>
+                <Button fx:id="btnSave" text="💾 Save Quiz" styleClass="btn-primary" onAction="#handleSaveQuiz"/>
+                <Button fx:id="btnPublish" text="📤 Publish" styleClass="btn-outline" onAction="#handleTogglePublish"/>
+            </HBox>
+        </VBox>
+    </top>
+
+    <!-- CENTER: Settings + Questions -->
+    <center>
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent;">
+            <VBox spacing="20">
+                <padding><Insets top="16" right="32" bottom="32" left="32"/></padding>
+
+                <!-- Quiz Settings Card -->
+                <VBox fx:id="settingsBox" spacing="12"/>
+
+                <!-- Summary Bar -->
+                <HBox fx:id="summaryBar" spacing="24" alignment="CENTER_LEFT" styleClass="quiz-summary-bar" managed="false" visible="false"/>
+
+                <!-- Question Type Selector -->
+                <VBox fx:id="typeSelectorBox" spacing="12" managed="false" visible="false"/>
+
+                <!-- Question Editor -->
+                <VBox fx:id="questionEditorBox" spacing="12" managed="false" visible="false"/>
+
+                <!-- Questions Header -->
+                <HBox spacing="12" alignment="CENTER_LEFT">
+                    <Label text="📝 Questions" styleClass="quiz-section-header"/>
+                    <Region HBox.hgrow="ALWAYS"/>
+                    <Button fx:id="btnAddQuestion" text="➕ Add Question" styleClass="btn-primary, btn-sm" onAction="#handleAddQuestion"/>
+                </HBox>
+
+                <!-- Questions List -->
+                <VBox fx:id="questionsContainer" spacing="14"/>
+            </VBox>
+        </ScrollPane>
+    </center>
+</BorderPane>

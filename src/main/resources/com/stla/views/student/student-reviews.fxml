@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<StackPane fx:id="reviewsRoot" xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.student.StudentReviewsController"
+           styleClass="reviews-root"
+           stylesheets="@../../css/app.css, @../../css/cards.css, @../../css/buttons.css, @../../css/forms.css, @../../css/reviews.css"
+           style="-fx-background-color: #0a0f1e;">
+
+    <!-- ========== LIST VIEW ========== -->
+    <VBox fx:id="listView" spacing="0" styleClass="reviews-page" style="-fx-padding: 28 32 28 32;">
+
+        <HBox alignment="CENTER_LEFT" spacing="16" styleClass="reviews-list-header">
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label text="⭐ My Reviews" styleClass="heading-1"/>
+                <Label text="See what you've shared and rate your instructors" styleClass="subtitle"/>
+            </VBox>
+            <Button fx:id="refreshBtn" text="↻ Refresh" styleClass="btn-outline, btn-sm" onAction="#handleRefresh"/>
+            <Button fx:id="writeReviewBtn" text="✏ Write Review" styleClass="btn-gradient" onAction="#handleOpenWriteView"/>
+        </HBox>
+
+        <VBox spacing="16" VBox.vgrow="ALWAYS" styleClass="reviews-list-body">
+            <HBox styleClass="reviews-cta-banner" alignment="CENTER_LEFT" spacing="20">
+                <VBox spacing="6" HBox.hgrow="ALWAYS">
+                    <Label text="Share your learning experience" styleClass="reviews-cta-title"/>
+                    <Label text="Help other students and give feedback to your instructors" styleClass="reviews-cta-sub" wrapText="true"/>
+                </VBox>
+                <Button text="Start Writing" styleClass="btn-gradient, btn-sm" onAction="#handleOpenWriteView"/>
+            </HBox>
+
+            <Label text="Your submitted reviews" styleClass="section-title"/>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS" styleClass="reviews-scroll">
+                <VBox fx:id="reviewsList" spacing="12"/>
+            </ScrollPane>
+        </VBox>
+    </VBox>
+
+    <!-- ========== FULL-PAGE WRITE REVIEW ========== -->
+    <VBox fx:id="writeView" visible="false" managed="false" spacing="0" styleClass="review-write-page">
+        <!-- Hero -->
+        <VBox spacing="12" styleClass="review-write-hero">
+            <HBox alignment="CENTER_LEFT" spacing="12">
+                <Button fx:id="backBtn" text="Back to reviews" styleClass="review-back-btn" onAction="#handleBackToList"/>
+                <Region HBox.hgrow="ALWAYS"/>
+            </HBox>
+            <Label text="Write a Review" styleClass="review-write-title"/>
+            <Label text="Tell us about your course and instructor — your feedback helps everyone grow" styleClass="review-write-subtitle" wrapText="true"/>
+        </VBox>
+
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" VBox.vgrow="ALWAYS" styleClass="review-write-scroll">
+            <VBox spacing="0" styleClass="review-write-content" style="-fx-padding: 0 40 40 40;">
+
+                <!-- Course -->
+                <VBox spacing="10" styleClass="review-form-block">
+                    <Label text="COURSE" styleClass="review-form-label"/>
+                    <ComboBox fx:id="courseCombo" maxWidth="Infinity" styleClass="review-course-combo"/>
+                    <Label fx:id="courseHintLabel" text="Select a course you are enrolled in" styleClass="review-form-hint" wrapText="true"/>
+                </VBox>
+
+                <!-- Rating -->
+                <VBox spacing="12" styleClass="review-form-block">
+                    <Label text="OVERALL RATING" styleClass="review-form-label"/>
+                    <HBox fx:id="starRatingBox" spacing="10" alignment="CENTER_LEFT" styleClass="star-rating-row"/>
+                    <Label fx:id="ratingHintLabel" text="Tap a star to rate" styleClass="review-rating-hint"/>
+                </VBox>
+
+                <!-- Title -->
+                <VBox spacing="10" styleClass="review-form-block">
+                    <Label text="REVIEW TITLE" styleClass="review-form-label"/>
+                    <Label text="Optional — a short headline for your review" styleClass="review-form-hint"/>
+                    <TextField fx:id="titleField" promptText="e.g. Great course, very practical" styleClass="review-input" prefHeight="48"/>
+                </VBox>
+
+                <!-- Comment -->
+                <VBox spacing="10" styleClass="review-form-block">
+                    <Label text="YOUR REVIEW" styleClass="review-form-label"/>
+                    <Label text="What did you like? What could be improved?" styleClass="review-form-hint"/>
+                    <TextArea fx:id="commentArea" promptText="Share your experience with the course content, instructor, and overall learning journey..."
+                              wrapText="true" prefRowCount="8" styleClass="review-textarea" VBox.vgrow="ALWAYS"/>
+                </VBox>
+
+                <Label fx:id="formErrorLabel" text="" styleClass="review-form-error" wrapText="true" visible="false" managed="false"/>
+
+                <HBox spacing="14" alignment="CENTER_RIGHT" styleClass="review-form-actions">
+                    <Button fx:id="cancelBtn" text="Cancel" styleClass="btn-outline" onAction="#handleBackToList"/>
+                    <ProgressIndicator fx:id="submitLoading" prefWidth="24" prefHeight="24" visible="false" managed="false"/>
+                    <Button fx:id="submitBtn" text="Publish Review" styleClass="btn-gradient, review-submit-btn" onAction="#handleSubmitReview"/>
+                </HBox>
+            </VBox>
+        </ScrollPane>
+    </VBox>
+</StackPane>

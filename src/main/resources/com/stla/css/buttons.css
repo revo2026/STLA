@@ -1,0 +1,246 @@
+/* ============================================
+   STLA Desktop — Button Styles (Premium Dark)
+   ============================================ */
+
+.button {
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 10 20;
+    -fx-cursor: hand;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1;
+    -fx-text-fill: #f0f6ff;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.20), 6, 0, 0, 2);
+}
+
+.button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.28), 10, 0, 0, 3);
+}
+
+.button:pressed {
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 4, 0, 0, 1);
+}
+
+.btn-primary {
+    -fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9);
+    -fx-text-fill: #061018;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(45, 212, 191, 0.27), 20, 0.15, 0, 4);
+}
+
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to right, #25c4ad, #0284c7);
+}
+
+.btn-secondary {
+    -fx-background-color: rgba(245, 158, 11, 0.85);
+    -fx-text-fill: #061018;
+    -fx-border-color: transparent;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #f59e0b;
+}
+
+.btn-accent {
+    -fx-background-color: rgba(14, 165, 233, 0.85);
+    -fx-text-fill: #061018;
+    -fx-border-color: transparent;
+}
+
+.btn-success {
+    -fx-background-color: #22c55e;
+    -fx-text-fill: #061018;
+    -fx-border-color: transparent;
+}
+
+.btn-danger {
+    -fx-background-color: #ef4444;
+    -fx-text-fill: #f0f6ff;
+    -fx-border-color: transparent;
+}
+
+.btn-outline {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255, 255, 255, 0.14);
+    -fx-border-width: 1;
+    -fx-text-fill: #8899b4;
+}
+
+.btn-outline:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-border-color: rgba(45, 212, 191, 0.40);
+    -fx-text-fill: #f0f6ff;
+}
+
+.btn-ghost {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8899b4;
+    -fx-border-width: 0;
+    -fx-effect: none;
+}
+
+.btn-ghost:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-text-fill: #2dd4bf;
+}
+
+.btn-sm {
+    -fx-padding: 6 14;
+    -fx-font-size: 12px;
+}
+
+.btn-lg {
+    -fx-padding: 14 28;
+    -fx-font-size: 16px;
+}
+
+.btn-icon {
+    -fx-background-color: transparent;
+    -fx-padding: 8;
+    -fx-background-radius: 50;
+    -fx-border-width: 0;
+    -fx-effect: none;
+}
+
+.btn-icon:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+}
+
+.btn-gradient {
+    -fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9);
+    -fx-text-fill: #061018;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-font-size: 15px;
+    -fx-padding: 12 28;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(45, 212, 191, 0.27), 20, 0.15, 0, 4);
+}
+
+.btn-gradient:hover {
+    -fx-background-color: linear-gradient(to right, #25c4ad, #0284c7);
+    -fx-effect: dropshadow(gaussian, rgba(45, 212, 191, 0.40), 24, 0.18, 0, 6);
+}
+
+.button:disabled {
+    -fx-opacity: 0.5;
+    -fx-cursor: default;
+}
+
+.role-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-text-fill: #8899b4;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 8 16;
+    -fx-cursor: hand;
+    -fx-effect: none;
+}
+
+.role-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-border-color: rgba(45, 212, 191, 0.35);
+    -fx-text-fill: #f0f6ff;
+}
+
+.role-btn-active {
+    -fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9);
+    -fx-text-fill: #061018;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(45, 212, 191, 0.30), 12, 0, 0, 3);
+}
+
+.role-btn-active:hover {
+    -fx-background-color: linear-gradient(to right, #25c4ad, #0284c7);
+}
+
+.link-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2dd4bf;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-border-width: 0;
+    -fx-padding: 2 4;
+    -fx-cursor: hand;
+    -fx-effect: none;
+    -fx-underline: true;
+}
+
+.link-btn:hover {
+    -fx-text-fill: #0ea5e9;
+}
+
+.chip {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-text-fill: #8899b4;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 6 14;
+    -fx-cursor: hand;
+    -fx-effect: none;
+}
+
+.chip:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+    -fx-border-color: rgba(45, 212, 191, 0.35);
+    -fx-text-fill: #f0f6ff;
+}
+
+.chip-selected {
+    -fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9);
+    -fx-text-fill: #061018;
+    -fx-border-color: transparent;
+    -fx-effect: dropshadow(gaussian, rgba(45, 212, 191, 0.30), 10, 0, 0, 3);
+}
+
+.avatar-upload-card {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 50;
+    -fx-border-radius: 50;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 2;
+    -fx-pref-width: 80;
+    -fx-pref-height: 80;
+    -fx-min-width: 80;
+    -fx-min-height: 80;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}
+
+.avatar-upload-card:hover {
+    -fx-border-color: rgba(45, 212, 191, 0.45);
+    -fx-background-color: rgba(255, 255, 255, 0.10);
+}
+
+.btn-approve {
+    -fx-background-color: linear-gradient(to right, #22c55e, #16a34a);
+    -fx-text-fill: #061018;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 8 24;
+    -fx-border-color: transparent;
+}
+
+.btn-reject {
+    -fx-background-color: linear-gradient(to right, #ef4444, #dc2626);
+    -fx-text-fill: #f0f6ff;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-padding: 8 24;
+    -fx-border-color: transparent;
+}

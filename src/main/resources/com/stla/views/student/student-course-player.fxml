@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.control.*?>
+
+
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.student.StudentCoursePlayerController"
+
+            fx:id="rootPane" prefWidth="1100" minHeight="680" styleClass="course-player-root">
+
+    <top>
+
+        <VBox spacing="10" style="-fx-padding: 14 24; -fx-background-color: #1e293b; -fx-border-color: transparent transparent #334155 transparent; -fx-border-width: 0 0 1 0;">
+
+            <HBox alignment="CENTER_LEFT" spacing="16">
+
+                <Button fx:id="backButton" text="Back" styleClass="btn-secondary, btn-sm" onAction="#handleBack"/>
+
+                <VBox spacing="2" HBox.hgrow="ALWAYS">
+
+                    <Label fx:id="courseTitleLabel" text="Course Player" style="-fx-text-fill: white; -fx-font-size: 18px; -fx-font-weight: bold;"/>
+
+                    <Label fx:id="lessonTitleLabel" text="Select a lesson" style="-fx-text-fill: #94a3b8; -fx-font-size: 13px;"/>
+
+                </VBox>
+
+            </HBox>
+
+            <HBox alignment="CENTER_LEFT" spacing="12">
+
+                <ProgressBar fx:id="courseProgressBar" prefWidth="220" progress="0" styleClass="course-progress-bar"/>
+
+                <Label fx:id="lessonsCountLabel" text="0 / 0 lessons" style="-fx-text-fill: #cbd5e1; -fx-font-size: 12px;"/>
+
+            </HBox>
+
+        </VBox>
+
+    </top>
+
+    <left>
+
+        <VBox prefWidth="320" minWidth="280" style="-fx-background-color: #1e293b; -fx-padding: 12;">
+
+            <Label text="Course content" style="-fx-text-fill: #94a3b8; -fx-font-weight: bold; -fx-padding: 0 0 8 8;"/>
+
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+
+                <VBox fx:id="lessonsList" spacing="6"/>
+
+            </ScrollPane>
+
+        </VBox>
+
+    </left>
+
+    <center>
+
+        <VBox spacing="0" style="-fx-background-color: #0f172a;">
+
+            <StackPane fx:id="playerArea" VBox.vgrow="ALWAYS" minHeight="380">
+
+                <VBox fx:id="lockedOverlay" styleClass="locked-lesson-overlay" visible="false" managed="false" alignment="CENTER" spacing="16">
+
+                    <Label text="🔒" style="-fx-font-size: 48px;"/>
+
+                    <Label fx:id="lockMessageLabel" text="Enroll to Access Course" style="-fx-text-fill: white; -fx-font-size: 20px; -fx-font-weight: bold;"/>
+
+                    <Label text="Preview lessons are free. Enroll to unlock all content." style="-fx-text-fill: #cbd5e1;" wrapText="true" maxWidth="400"/>
+
+                </VBox>
+
+                <VBox fx:id="emptyStateBox" alignment="CENTER" spacing="12" visible="false" managed="false">
+
+                    <Label text="🎬" style="-fx-font-size: 48px;"/>
+
+                    <Label fx:id="emptyStateLabel" text="No lessons available" style="-fx-text-fill: #94a3b8;"/>
+
+                </VBox>
+
+            </StackPane>
+
+            <HBox fx:id="lessonActionsBox" alignment="CENTER_LEFT" spacing="12"
+
+                  style="-fx-padding: 14 24; -fx-background-color: #1e293b; -fx-border-color: #334155 transparent transparent transparent; -fx-border-width: 1 0 0 0;">
+
+                <Label fx:id="watchProgressLabel" text="" style="-fx-text-fill: #94a3b8; -fx-font-size: 12px;" HBox.hgrow="ALWAYS"/>
+
+                <Label fx:id="completedBadge" text="✓ Completed" styleClass="lesson-completed-badge" visible="false" managed="false"/>
+
+                <Button fx:id="completeLessonBtn" text="Complete Lesson" styleClass="btn-accent, btn-sm" visible="false" managed="false" onAction="#handleCompleteLesson"/>
+
+                <Button fx:id="nextLessonBtn" text="Next Lesson" styleClass="btn-secondary, btn-sm" visible="false" managed="false" onAction="#handleNextLesson"/>
+
+            </HBox>
+
+            <VBox fx:id="resourcesPanel" spacing="10" visible="false" managed="false"
+
+                  style="-fx-padding: 14 24 20 24; -fx-background-color: #1e293b; -fx-border-color: #334155 transparent transparent transparent; -fx-border-width: 1 0 0 0;">
+
+                <Label text="📁 Lesson Resources" style="-fx-text-fill: #e2e8f0; -fx-font-weight: bold; -fx-font-size: 14px;"/>
+
+                <VBox fx:id="resourcesList" spacing="8"/>
+
+            </VBox>
+
+        </VBox>
+
+    </center>
+
+</BorderPane>
+

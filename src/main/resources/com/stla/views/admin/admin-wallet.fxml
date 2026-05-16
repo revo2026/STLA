@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.admin.AdminWalletController"
+      fx:id="rootBox" spacing="24" style="-fx-padding: 28 32;">
+    <Label text="Admin Wallet" styleClass="heading-1"/>
+    <Label text="Platform commission, payment history, and instructor withdrawal history" styleClass="text-secondary"/>
+    <FlowPane fx:id="statsRow" hgap="16" vgap="12" prefWrapLength="900"/>
+    <VBox spacing="12" styleClass="checkout-card" VBox.vgrow="ALWAYS">
+        <Label text="Payment &amp; Commission History" styleClass="section-title"/>
+        <TableView fx:id="transactionsTable" prefHeight="220"/>
+    </VBox>
+    <VBox spacing="12" styleClass="checkout-card" VBox.vgrow="ALWAYS">
+        <Label text="Instructor Withdrawal History" styleClass="section-title"/>
+        <TableView fx:id="withdrawalsTable" prefHeight="220" VBox.vgrow="ALWAYS"/>
+    </VBox>
+</VBox>

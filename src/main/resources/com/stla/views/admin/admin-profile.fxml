@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.admin.AdminProfileController"
+            fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent;">
+    <VBox spacing="20" style="-fx-padding: 28 32; -fx-background-color: #0a0f1e;">
+        <Label text="👤 My Profile" styleClass="heading-1"/>
+
+        <HBox spacing="20" alignment="CENTER_LEFT" styleClass="card" style="-fx-padding: 20;">
+            <StackPane fx:id="avatarContainer" prefWidth="80" prefHeight="80"/>
+            <VBox spacing="4" HBox.hgrow="ALWAYS">
+                <Label fx:id="nameLabel" text="Admin" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+                <Label fx:id="emailLabel" text="" style="-fx-font-size: 14px; -fx-text-fill: #8899b4;"/>
+                <Label fx:id="memberSinceLabel" text="" style="-fx-font-size: 12px; -fx-text-fill: #4a6080;"/>
+            </VBox>
+            <Button text="📷 Change Avatar" styleClass="btn-outline, btn-sm" onAction="#handleAvatarChange"/>
+        </HBox>
+
+        <VBox spacing="10" styleClass="card" style="-fx-padding: 20;">
+            <Label text="📋 Personal Information" style="-fx-font-size: 16px; -fx-font-weight: bold;"/>
+            <HBox spacing="12">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="FULL NAME" styleClass="form-label"/>
+                    <TextField fx:id="editNameField" prefHeight="36"/>
+                </VBox>
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="PHONE" styleClass="form-label"/>
+                    <TextField fx:id="editPhoneField" prefHeight="36"/>
+                </VBox>
+            </HBox>
+            <HBox spacing="12">
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="COUNTRY" styleClass="form-label"/>
+                    <TextField fx:id="editCountryField" prefHeight="36"/>
+                </VBox>
+                <VBox spacing="4" HBox.hgrow="ALWAYS">
+                    <Label text="TIMEZONE" styleClass="form-label"/>
+                    <TextField fx:id="editTimezoneField" prefHeight="36"/>
+                </VBox>
+            </HBox>
+            <VBox spacing="4">
+                <Label text="BIO" styleClass="form-label"/>
+                <TextArea fx:id="editBioField" prefHeight="80" wrapText="true"/>
+            </VBox>
+            <HBox alignment="CENTER_RIGHT" spacing="12">
+                <ProgressIndicator fx:id="saveLoading" prefWidth="24" prefHeight="24" visible="false" managed="false"/>
+                <Button fx:id="saveBtn" text="💾 Save Changes" styleClass="btn-gradient" onAction="#handleSave"/>
+            </HBox>
+        </VBox>
+    </VBox>
+</ScrollPane>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.student.NotificationsController"
+      spacing="20" styleClass="notifications-page" style="-fx-padding: 28 32; -fx-background-color: #0a0f1e;">
+    <HBox alignment="CENTER_LEFT" spacing="16">
+        <VBox spacing="4" HBox.hgrow="ALWAYS">
+            <Label text="🔔 Notifications" styleClass="heading-1"/>
+            <Label fx:id="unreadCountLabel" text="" styleClass="notifications-unread-count"/>
+        </VBox>
+        <ComboBox fx:id="filterCombo" prefWidth="160" styleClass="notifications-filter"/>
+        <Button fx:id="markAllBtn" text="Mark All Read" styleClass="btn-outline, btn-sm" onAction="#handleMarkAllRead"/>
+    </HBox>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+        <VBox fx:id="notifsContainer" spacing="8"/>
+    </ScrollPane>
+</VBox>

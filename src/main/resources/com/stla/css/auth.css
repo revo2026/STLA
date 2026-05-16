@@ -1,0 +1,156 @@
+/* ============================================
+   STLA — Auth screens (login / register)
+   Premium dark glassmorphism
+   ============================================ */
+
+.auth-root, .login-container {
+    -fx-background-color: #0a0f1e;
+}
+
+.auth-scroll, .auth-form-scroll {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+    -fx-padding: 0;
+}
+
+.auth-scroll > .viewport,
+.auth-form-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.auth-layout {
+    -fx-alignment: top-center;
+    -fx-padding: 24 20 32 20;
+    -fx-spacing: 0;
+    -fx-min-width: 320;
+}
+
+.auth-split {
+    -fx-alignment: center;
+    -fx-spacing: 32;
+    -fx-max-width: 1280;
+}
+
+.auth-brand-panel {
+    -fx-alignment: center-left;
+    -fx-spacing: 14;
+    -fx-padding: 24 16;
+    -fx-min-width: 260;
+    -fx-pref-width: 420;
+    -fx-max-width: 480;
+}
+
+.auth-brand-badge {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 999;
+    -fx-padding: 8 18;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #8899b4;
+}
+
+.auth-brand-tagline {
+    -fx-font-size: 14px;
+    -fx-text-fill: #8899b4;
+    -fx-wrap-text: true;
+    -fx-max-width: 400;
+}
+
+.auth-brand-muted {
+    -fx-font-size: 13px;
+    -fx-text-fill: #4a6080;
+    -fx-wrap-text: true;
+    -fx-max-width: 340;
+}
+
+.auth-feature-pill {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 999;
+    -fx-padding: 6 14;
+    -fx-font-size: 11px;
+    -fx-text-fill: #8899b4;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-radius: 999;
+    -fx-border-width: 1;
+}
+
+.auth-form-panel {
+    -fx-alignment: center;
+    -fx-padding: 8 0;
+    -fx-min-width: 300;
+}
+
+.auth-card, .login-card {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 24;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-radius: 24;
+    -fx-border-width: 1;
+    -fx-padding: 36 32 28 32;
+    -fx-spacing: 10;
+    -fx-min-width: 300;
+    -fx-pref-width: 460;
+    -fx-max-width: 480;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.38), 48, 0.10, 0, 16);
+}
+
+.auth-card-wide {
+    -fx-pref-width: 580;
+    -fx-max-width: 640;
+}
+
+.auth-title, .login-title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0f6ff;
+}
+
+.auth-subtitle, .login-subtitle {
+    -fx-font-size: 14px;
+    -fx-text-fill: #8899b4;
+    -fx-wrap-text: true;
+}
+
+.auth-form-label, .form-label {
+    -fx-font-family: "Consolas", monospace;
+    -fx-font-size: 10px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #4a6080;
+    -fx-letter-spacing: 2;
+    -fx-padding: 8 0 4 0;
+}
+
+.auth-role-flow {
+    -fx-hgap: 8;
+    -fx-vgap: 8;
+    -fx-alignment: center-left;
+}
+
+.auth-primary-btn {
+    -fx-max-width: infinity;
+    -fx-pref-height: 48;
+    -fx-font-size: 15px;
+}
+
+.auth-footer-muted {
+    -fx-font-size: 12px;
+    -fx-text-fill: #4a6080;
+}
+
+.auth-card-compact {
+    -fx-padding: 28 22 24 22;
+    -fx-max-width: 560;
+}
+
+.auth-stepper-active, .stepper-active {
+    -fx-text-fill: #2dd4bf;
+    -fx-background-color: rgba(45, 212, 191, 0.15);
+}
+
+.auth-step-dot {
+    -fx-background-color: rgba(255, 255, 255, 0.12);
+}
+
+.auth-step-dot-active {
+    -fx-background-color: #2dd4bf;
+}

@@ -1,0 +1,81 @@
+@startuml STLA_Decorator_Pattern
+title STLA Desktop — Decorator Pattern
+skinparam classAttributeIconSize 0
+
+package "com.stla.patterns.decorator" {
+  interface CourseComponent <<Component>> {
+    + getDescription(): String
+    + getPrice(): BigDecimal
+  }
+
+  class BaseCourse <<ConcreteComponent>> {
+    - title: String
+    - basePrice: BigDecimal
+    + getDescription(): String
+    + getPrice(): BigDecimal
+  }
+
+  abstract class CourseDecorator <<Decorator>> {
+    # wrapped: CourseComponent
+    + getDescription(): String
+    + getPrice(): BigDecimal
+  }
+
+  class CertificateDecorator <<ConcreteDecorator>> {
+    + getDescription(): String
+    + getPrice(): BigDecimal
+  }
+
+  class QuizDecorator <<ConcreteDecorator>> {
+    + getDescription(): String
+    + getPrice(): BigDecimal
+  }
+
+  class MentorSupportDecorator <<ConcreteDecorator>> {
+    + getDescription(): String
+    + getPrice(): BigDecimal
+  }
+
+  note as NMissing
+    **BasicCourseComponent** — Class not found in current codebase
+    (use **BaseCourse** instead)
+
+    **ResourcesDecorator** — Class not found in current codebase
+    (resources addon stored as Course.hasResources flag in UI)
+  end note
+
+  note bottom of CourseDecorator
+    UI (AddCourseController) persists add-ons as
+    Course.hasCertificate, hasQuiz, hasMentorSupport,
+    hasResources — decorator stack not built at runtime.
+  end note
+}
+
+CourseComponent <|.. BaseCourse
+CourseComponent <|.. CourseDecorator
+CourseDecorator o-- CourseComponent : wrapped
+CourseDecorator <|-- CertificateDecorator
+CourseDecorator <|-- QuizDecorator
+CourseDecorator <|-- MentorSupportDecorator
+
+package "com.stla.domain.models" {
+  class Course {
+    hasCertificate: boolean
+    hasQuiz: boolean
+    hasMentorSupport: boolean
+    hasResources: boolean
+  }
+}
+
+package "com.stla.ui.instructor" {
+  class AddCourseController
+}
+
+AddCourseController ..> Course : saves flags
+
+note right of CourseComponent
+  Decorator wraps component to add
+  price/description layers dynamically.
+end note
+
+@enduml

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<StackPane xmlns:fx="http://javafx.com/fxml" fx:id="rootStack" fx:controller="com.stla.ui.admin.CourseReviewController">
+
+    <VBox fx:id="listPane" spacing="16" styleClass="content-area"
+          stylesheets="@../../css/app.css, @../../css/cards.css, @../../css/buttons.css">
+        <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+
+        <Label text="📋 Pending Course Reviews" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;"/>
+        <Label fx:id="statusLabel" text="Loading..." styleClass="text-secondary"/>
+
+        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+            <VBox fx:id="coursesContainer" spacing="12"/>
+        </ScrollPane>
+    </VBox>
+
+</StackPane>

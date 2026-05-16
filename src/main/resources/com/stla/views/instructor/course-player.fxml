@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="rootPane" prefHeight="863.0" prefWidth="1100" style="-fx-background-color: #0a0f1e;" styleClass="course-player-root, course-player-studio" stylesheets="@../../css/app.css, @../../css/buttons.css, @../../css/forms.css, @../../css/sidebar.css, @../../css/dark-theme.css, @../../css/player.css" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.stla.ui.instructor.CoursePlayerController">
+
+    <!-- LEFT: Course structure sidebar (~320px fixed) -->
+    <left>
+        <VBox fx:id="sidebarPane" maxHeight="Infinity" maxWidth="320" minWidth="320" prefWidth="320" spacing="0" styleClass="lesson-sidebar">
+            <VBox spacing="12" styleClass="lesson-sidebar-header">
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <Button fx:id="backBtn" onAction="#handleBack" styleClass="lesson-sidebar-back-btn" text="Back" />
+                    <Region HBox.hgrow="ALWAYS" />
+                </HBox>
+                <VBox spacing="6">
+                    <Label fx:id="sidebarCourseTitle" styleClass="lesson-sidebar-title, studio-sidebar-course-title" text="Course" />
+                    <Label fx:id="sidebarCourseMeta" styleClass="lesson-sidebar-subtitle" text="" />
+                </VBox>
+            </VBox>
+
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" styleClass="studio-sidebar-scroll" VBox.vgrow="ALWAYS">
+                <VBox fx:id="sectionsContainer" spacing="0" styleClass="section-accordion" />
+            </ScrollPane>
+
+            <VBox maxWidth="Infinity" styleClass="studio-add-section-bar">
+                <Button maxWidth="Infinity" onAction="#handleAddSection" styleClass="add-section-btn, studio-add-section-gradient" text="➕  Add Section" />
+            </VBox>
+        </VBox>
+    </left>
+
+    <!-- CENTER: Studio workspace -->
+    <center>
+        <StackPane maxHeight="Infinity" maxWidth="Infinity" styleClass="studio-workspace-stack">
+            <HBox alignment="TOP_LEFT" maxHeight="Infinity" maxWidth="Infinity" mouseTransparent="true" pickOnBounds="false" spacing="0" StackPane.alignment="TOP_LEFT">
+                <Region style="-fx-pref-width: 320; -fx-pref-height: 320; -fx-min-width: 180; -fx-min-height: 180;                          -fx-background-radius: 400; -fx-max-width: Infinity; -fx-max-height: Infinity;                          -fx-background-color: radial-gradient(center 42% 38%, radius 58%, rgba(45,212,191,0.22), transparent 70%);" />
+                <Pane maxHeight="Infinity" minWidth="32" HBox.hgrow="ALWAYS" />
+                <Region style="-fx-pref-width: 260; -fx-pref-height: 260; -fx-min-width: 140; -fx-min-height: 140;                          -fx-background-radius: 400; -fx-max-width: Infinity; -fx-max-height: Infinity;                          -fx-background-color: radial-gradient(center 55% 48%, radius 52%, rgba(14,165,233,0.16), transparent 68%);" />
+            </HBox>
+
+            <!-- Main column: outer 24px padding, 24px between major blocks -->
+            <VBox maxHeight="Infinity" maxWidth="Infinity" spacing="24" style="-fx-padding: 24;" styleClass="studio-workspace-main">
+                <!-- Header card -->
+                <VBox fx:id="playerHeader" maxWidth="Infinity" spacing="10" styleClass="studio-player-header">
+                    <Label fx:id="breadcrumbLabel" styleClass="player-breadcrumb, studio-breadcrumb" text="" />
+                    <VBox maxWidth="Infinity" spacing="8">
+                        <Label fx:id="lessonTitleLabel" styleClass="player-lesson-title, studio-lesson-title" text="Select a lesson" wrapText="true" />
+                        <HBox alignment="CENTER_LEFT" spacing="10">
+                            <Label fx:id="lastUpdatedLabel" styleClass="player-meta, studio-meta-text" text="" />
+                            <Label fx:id="previewBadgeLabel" managed="false" styleClass="preview-badge, studio-preview-badge" text="" visible="false" />
+                        </HBox>
+                    </VBox>
+                </VBox>
+
+                <!-- Action row (10px between buttons; Save pinned right) -->
+                <HBox fx:id="actionButtonsRow" alignment="CENTER_LEFT" maxWidth="Infinity" spacing="10" styleClass="studio-action-row">
+                    <Button onAction="#handleEditLesson" styleClass="studio-ghost-btn" text="✏ Edit Lesson" />
+                    <Button onAction="#handleReplaceVideo" styleClass="studio-ghost-btn" text="🎬 Replace Video" />
+                    <Button onAction="#handleDeleteLesson" styleClass="studio-danger-btn" text="🗑 Delete Lesson" />
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button onAction="#handleSaveChanges" styleClass="studio-primary-gradient-btn" text="💾 Save Changes" />
+                </HBox>
+
+                <!-- Video (left) + tabs & scrollable content (right, large panel) -->
+                <HBox alignment="TOP_LEFT" fillHeight="true" maxHeight="Infinity" maxWidth="Infinity" spacing="24" VBox.vgrow="ALWAYS">
+                    <VBox maxHeight="Infinity" maxWidth="Infinity" minHeight="380" minWidth="400" styleClass="studio-video-chrome" HBox.hgrow="ALWAYS">
+                        <StackPane fx:id="videoPlayerContainer" maxHeight="Infinity" maxWidth="Infinity" minHeight="360" styleClass="studio-video-container" VBox.vgrow="ALWAYS" />
+                    </VBox>
+                    <VBox maxHeight="Infinity" minWidth="440" prefWidth="560" spacing="16" HBox.hgrow="ALWAYS">
+                        <VBox maxWidth="Infinity" styleClass="studio-tabs-outer">
+                            <HBox fx:id="tabBar" alignment="CENTER_LEFT" spacing="6" styleClass="studio-tab-pill-bar">
+                                <Button fx:id="tabInfo" onAction="#handleTabInfo" styleClass="studio-tab-btn, studio-tab-btn-active" text="📋 Lesson Info" />
+                                <Button fx:id="tabResources" onAction="#handleTabResources" styleClass="studio-tab-btn" text="📁 Resources" />
+                                <Button fx:id="tabQuiz" onAction="#handleTabQuiz" styleClass="studio-tab-btn" text="📝 Quiz" />
+                            </HBox>
+                        </VBox>
+                        <ScrollPane fitToWidth="true" hbarPolicy="NEVER" maxHeight="Infinity" maxWidth="Infinity" minHeight="420" prefHeight="560" styleClass="studio-tab-scroll" VBox.vgrow="ALWAYS">
+                            <VBox fx:id="tabContent" maxWidth="Infinity" spacing="16" styleClass="player-tab-content, studio-tab-body">
+                                <padding><Insets bottom="24" left="24" right="24" top="24" /></padding>
+                            </VBox>
+                        </ScrollPane>
+                    </VBox>
+                </HBox>
+            </VBox>
+        </StackPane>
+    </center>
+</BorderPane>

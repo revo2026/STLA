@@ -1,0 +1,138 @@
+@startuml STLA_Singleton_Pattern
+title STLA Desktop — Singleton Pattern
+skinparam classAttributeIconSize 0
+
+package "com.stla.app" {
+  class AppConfig <<Singleton>> {
+    - {static} instance: AppConfig
+    + {static} getInstance(): AppConfig
+    + getDbUrl(): String
+    + getSupabaseUrl(): String
+    + getSupabaseAnonKey(): String
+  }
+  note right of AppConfig
+    Singleton
+    - private constructor
+    - volatile instance + DCL
+    - loads .env configuration
+  end note
+}
+
+package "com.stla.core.database" {
+  class DatabaseConnection <<Singleton>> {
+    - {static} instance: DatabaseConnection
+    - dataSource: HikariDataSource
+    + {static} getInstance(): DatabaseConnection
+    + getConnection(): Connection
+    + testConnection(): boolean
+    + shutdown(): void
+  }
+  note right of DatabaseConnection
+    Singleton
+    - HikariCP connection pool
+    - uses AppConfig.getInstance()
+  end note
+}
+
+package "com.stla.core.session" {
+  class SessionManager <<Singleton>> {
+    - {static} instance: SessionManager
+    - currentProfile: Profile
+    - currentStudent: Student
+    - currentInstructor: Instructor
+    - currentAdmin: Admin
+    + {static} getInstance(): SessionManager
+    + loginAsStudent(...)
+    + loginAsInstructor(...)
+    + loginAsAdmin(...)
+    + logout(): void
+  }
+  note right of SessionManager
+    Singleton
+    - double-checked locking
+    - holds logged-in user state
+  end note
+}
+
+package "com.stla.core.navigation" {
+  class NavigationManager <<Singleton>> {
+    - {static} instance: NavigationManager
+    - primaryStage: Stage
+    - mainLayout: BorderPane
+    + {static} getInstance(): NavigationManager
+    + navigateTo(fxmlPath): void
+    + loadContent(fxmlPath): void
+    + navigateToDashboard(): void
+  }
+  note right of NavigationManager
+    Singleton
+    - eager static instance
+    - scene / layout navigation
+  end note
+}
+
+package "com.stla.patterns.observer" {
+  class EventBus <<Singleton>> {
+    - {static} INSTANCE: EventBus
+    + {static} getInstance(): EventBus
+    + subscribe(...)
+    + publish(...)
+  }
+  note right of EventBus
+    Singleton
+    - private constructor
+    - eager INSTANCE field
+  end note
+}
+
+package "com.stla.ui.components" {
+  class ThemeManager <<Singleton>> {
+    - {static} instance: ThemeManager
+    + {static} getInstance(): ThemeManager
+    + toggleTheme(): void
+    + setScene(scene): void
+  }
+  note right of ThemeManager
+    Singleton
+    - lazy initialization
+    - light/dark CSS toggle
+  end note
+}
+
+package "com.stla.services" {
+  class SupabaseStorageService <<Singleton>> {
+    - {static} instance: SupabaseStorageService
+    + {static} getInstance(): SupabaseStorageService
+    + uploadFile(...)
+    + deleteFile(...)
+  }
+  note right of SupabaseStorageService
+    Singleton
+    - static getInstance()
+  end note
+}
+
+package "com.stla.patterns.singleton" {
+  class SingletonRegistry {
+    + {static} verifyAll(): void
+  }
+  note right of SingletonRegistry
+    Documentation / verification utility
+    for singleton instances (not a singleton itself).
+  end note
+}
+
+DatabaseConnection ..> AppConfig
+SingletonRegistry ..> AppConfig
+SingletonRegistry ..> SessionManager
+SingletonRegistry ..> EventBus
+
+package "com.stla.app" {
+  class StlaApplication
+}
+
+StlaApplication ..> AppConfig
+StlaApplication ..> DatabaseConnection
+StlaApplication ..> NavigationManager
+
+@enduml

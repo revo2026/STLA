@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.student.CourseCatalogController"
+      spacing="20" styleClass="catalog-page" style="-fx-padding: 28 32;">
+
+    <!-- Header -->
+    <HBox alignment="CENTER_LEFT" spacing="16">
+        <Label text="Course Catalog" styleClass="heading-1" HBox.hgrow="ALWAYS"/>
+        <Label fx:id="resultCount" text="" styleClass="text-secondary"/>
+    </HBox>
+
+    <!-- Filters -->
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField" promptText="🔍 Search courses..." styleClass="search-field" prefWidth="300"/>
+        <ComboBox fx:id="categoryFilter" prefWidth="180" promptText="Category"/>
+        <ComboBox fx:id="levelFilter" prefWidth="150" promptText="Level"/>
+    </HBox>
+
+    <!-- Course Grid -->
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+        <FlowPane fx:id="coursesGrid" hgap="20" vgap="20" prefWrapLength="920" styleClass="catalog-grid"/>
+    </ScrollPane>
+</VBox>

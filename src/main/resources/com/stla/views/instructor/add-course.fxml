@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.instructor.AddCourseController"
+      spacing="0" styleClass="content-area">
+    <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+
+    <!-- Step Indicator -->
+    <HBox fx:id="stepIndicator" spacing="12" alignment="CENTER">
+        <padding><Insets bottom="24"/></padding>
+    </HBox>
+
+    <!-- Step Container -->
+    <StackPane fx:id="stepContainer" VBox.vgrow="ALWAYS"/>
+
+    <!-- Wizard navigation (hidden on success screen) -->
+    <HBox fx:id="navButtons" spacing="16" alignment="CENTER_RIGHT">
+        <padding><Insets top="24"/></padding>
+        <Button fx:id="btnBack" text="Back" styleClass="btn-outline" onAction="#handleBack"/>
+        <Button fx:id="btnNext" text="Next" styleClass="btn-primary" onAction="#handleNext"/>
+        <Button fx:id="btnSaveDraft" text="💾 Save Draft" styleClass="btn-outline" onAction="#handleSaveDraft" visible="false"/>
+        <Button fx:id="btnSubmit" text="📤 Submit for Review" styleClass="btn-primary" onAction="#handleSubmit" visible="false"/>
+    </HBox>
+</VBox>

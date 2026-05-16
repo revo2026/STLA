@@ -1,0 +1,101 @@
+.checkout-root {
+    -fx-background-color: #0a0f1e;
+    -fx-padding: 28 32;
+}
+
+.checkout-card {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 24;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.40), 48, 0.10, 0, 16);
+}
+
+.payment-method-card {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.10);
+    -fx-border-radius: 16;
+    -fx-border-width: 2;
+    -fx-padding: 18;
+    -fx-cursor: hand;
+    -fx-effect: none;
+}
+
+.payment-method-card:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-border-color: rgba(255, 255, 255, 0.16);
+}
+
+.payment-method-selected {
+    -fx-border-color: #2dd4bf;
+    -fx-background-color: rgba(45, 212, 191, 0.12);
+    -fx-effect: dropshadow(gaussian, rgba(45, 212, 191, 0.35), 20, 0.18, 0, 4);
+}
+
+.visa-card-preview {
+    -fx-background-color: linear-gradient(135deg, #134e4a 0%, #0e7490 45%, #0369a1 100%);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-radius: 16;
+    -fx-border-width: 1;
+    -fx-padding: 22;
+    -fx-min-height: 128;
+}
+
+.secure-badge {
+    -fx-text-fill: #22c55e;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+
+.checkout-price {
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2dd4bf;
+}
+
+.success-root {
+    -fx-background-color: linear-gradient(to bottom, #0a0f1e, #111827);
+    -fx-alignment: center;
+    -fx-padding: 40;
+}
+
+.success-icon {
+    -fx-font-size: 64px;
+}
+
+.receipt-card {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-padding: 28;
+    -fx-max-width: 480;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 32, 0.10, 0, 12);
+}
+
+.course-details-hero {
+    -fx-background-color: linear-gradient(to bottom right, #2dd4bf, #0ea5e9);
+    -fx-background-radius: 16;
+    -fx-padding: 28;
+}
+
+.pricing-card-sticky {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 16;
+    -fx-padding: 24;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.30), 24, 0.08, 0, 8);
+}
+
+.locked-lesson-overlay {
+    -fx-background-color: rgba(10, 15, 30, 0.72);
+    -fx-background-radius: 12;
+    -fx-alignment: center;
+}
+
+.blurred-preview {
+    -fx-opacity: 0.45;
+}

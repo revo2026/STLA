@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.student.QuizTakeController"
+      spacing="16" styleClass="quiz-page content-area">
+    <padding><Insets top="24" right="24" bottom="24" left="24"/></padding>
+
+    <!-- Quiz Header -->
+    <HBox spacing="16" alignment="CENTER_LEFT">
+        <VBox HBox.hgrow="ALWAYS">
+            <Label fx:id="quizTitleLabel" text="Quiz" style="-fx-font-size: 22px; -fx-font-weight: bold;"/>
+            <Label fx:id="quizDescLabel" text="" styleClass="text-secondary"/>
+        </VBox>
+        <VBox alignment="CENTER">
+            <Label fx:id="timerLabel" text="⏱ --:--" style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #7C3AED;"/>
+        </VBox>
+    </HBox>
+
+    <!-- Question Navigation -->
+    <HBox fx:id="questionNav" spacing="6" alignment="CENTER"/>
+
+    <!-- Question Content -->
+    <VBox fx:id="questionContent" spacing="16" VBox.vgrow="ALWAYS"/>
+
+    <!-- Navigation Buttons -->
+    <HBox spacing="16" alignment="CENTER_RIGHT">
+        <Button fx:id="btnPrev" text="Previous" styleClass="btn-outline" onAction="#handlePrev"/>
+        <Button fx:id="btnNextQ" text="Next" styleClass="btn-primary" onAction="#handleNextQ"/>
+        <Button fx:id="btnSubmitQuiz" text="📤 Submit Quiz" styleClass="btn-primary" onAction="#handleSubmitQuiz" visible="false"/>
+    </HBox>
+</VBox>

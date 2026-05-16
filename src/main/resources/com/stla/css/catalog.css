@@ -1,0 +1,122 @@
+/* ============================================
+   STLA Desktop — Course Catalog
+   ============================================ */
+
+.catalog-page {
+    -fx-background-color: #0a0f1e;
+}
+
+.catalog-grid {
+    -fx-padding: 4 0 16 0;
+}
+
+/* Premium catalog course card */
+.catalog-course-card {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-border-color: rgba(255,255,255,0.12);
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 3);
+    -fx-cursor: hand;
+}
+
+.catalog-course-card:hover {
+    -fx-border-color: #2dd4bf;
+    -fx-effect: dropshadow(gaussian, rgba(14,74,84,0.16), 20, 0, 0, 8);
+}
+
+.course-card-thumb {
+    -fx-background-color: linear-gradient(to bottom right, #EDE9FE, #CFFAFE);
+}
+
+.course-thumb-skeleton {
+    -fx-background-color: linear-gradient(to right, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.12) 100%);
+    -fx-background-radius: 16 16 0 0;
+    -fx-min-height: 160;
+    -fx-pref-height: 160;
+}
+
+.course-thumb-placeholder {
+    -fx-background-color: linear-gradient(to bottom right, #7C3AED, #2dd4bf);
+    -fx-alignment: center;
+    -fx-min-height: 160;
+    -fx-pref-height: 160;
+}
+
+.course-thumb-placeholder-icon {
+    -fx-font-size: 42px;
+}
+
+.course-thumb-gradient-overlay {
+    -fx-background-color: linear-gradient(to top, rgba(15,23,42,0.35), transparent);
+    -fx-min-height: 56;
+    -fx-max-height: 56;
+    -fx-translate-y: 52;
+}
+
+.course-card-body {
+    -fx-padding: 14 16 16 16;
+    -fx-spacing: 6;
+}
+
+.catalog-course-card .course-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0f6ff;
+    -fx-max-height: 44;
+}
+
+.catalog-course-card .course-instructor {
+    -fx-font-size: 12px;
+    -fx-text-fill: #8899b4;
+}
+
+.catalog-course-card .course-meta {
+    -fx-font-size: 12px;
+    -fx-text-fill: #4a6080;
+}
+
+.catalog-course-card .course-price {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #D44304;
+}
+
+.course-enroll-btn {
+    -fx-padding: 10 16;
+    -fx-font-weight: bold;
+}
+
+.course-favorite-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: rgba(255,255,255,0.12);
+    -fx-border-radius: 20;
+    -fx-background-radius: 20;
+    -fx-min-width: 36;
+    -fx-min-height: 36;
+    -fx-font-size: 16px;
+    -fx-text-fill: #4a6080;
+}
+
+.course-favorite-active {
+    -fx-text-fill: #EF4444;
+    -fx-border-color: #FECACA;
+    -fx-background-color: #FEF2F2;
+}
+
+/* Course details hero thumbnail */
+.course-details-hero-thumb {
+    -fx-background-radius: 12;
+    -fx-min-width: 200;
+    -fx-pref-width: 240;
+    -fx-min-height: 140;
+    -fx-pref-height: 140;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 12, 0, 0, 4);
+}
+
+.course-details-hero-thumb .course-thumb-placeholder {
+    -fx-background-radius: 12;
+    -fx-min-height: 140;
+    -fx-pref-height: 140;
+}

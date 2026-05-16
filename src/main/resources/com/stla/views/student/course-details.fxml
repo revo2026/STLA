@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane style="-fx-background-color: #0a0f1e;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.stla.ui.student.CourseDetailsController">
+
+    <Region maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true" style="-fx-background-color: radial-gradient(center 18% 15%, radius 50%, rgba(45,212,191,0.14), transparent 65%);" />
+    <Region maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true" style="-fx-background-color: radial-gradient(center 82% 75%, radius 45%, rgba(99,102,241,0.12), transparent 62%);" />
+
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent; -fx-background: transparent; -fx-padding: 0;" vbarPolicy="AS_NEEDED">
+        <VBox fx:id="rootBox" spacing="28" style="-fx-padding: 24 28 48 28; -fx-background-color: transparent;">
+
+            <!-- Hero: full-width glass card -->
+            <VBox prefHeight="324.0" prefWidth="1049.0" style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 24; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 24; -fx-border-width: 1; -fx-padding: 28; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.38), 48, 0.10, 0, 16);">
+                <FlowPane hgap="24" prefWrapLength="1020" style="-fx-padding: 0;" vgap="24">
+                    <HBox alignment="TOP_LEFT" minWidth="280" spacing="60.0" HBox.hgrow="SOMETIMES">
+                        <StackPane fx:id="heroThumbnailPane" maxWidth="440" minWidth="260" prefHeight="225" prefWidth="400" style="-fx-background-radius: 20; -fx-border-radius: 20; -fx-border-color: rgba(255,255,255,0.10); -fx-border-width: 1; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.35), 28, 0.10, 0, 10);">
+                            <VBox fx:id="heroThumbPlaceholder" alignment="CENTER" minHeight="180" minWidth="260" prefHeight="225" prefWidth="400" style="-fx-background-color: linear-gradient(145deg, #0f172a 0%, #134e4a 55%, #0e7490 100%); -fx-background-radius: 20;">
+                                <Label style="-fx-font-size: 56px;" text="📘" />
+                            </VBox>
+                            <ImageView fx:id="heroThumbnailView" pickOnBounds="true" preserveRatio="true" visible="false" />
+                        </StackPane>
+                        <VBox alignment="TOP_LEFT" minWidth="220" spacing="12" HBox.hgrow="ALWAYS">
+                            <Label fx:id="courseTitleLabel" style="-fx-font-size: 32px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff; -fx-wrap-text: true;" text="Course Title" />
+                            <Label fx:id="subtitleLabel" style="-fx-font-size: 15px; -fx-text-fill: #8899b4; -fx-wrap-text: true;" text="" />
+                            <HBox alignment="CENTER_LEFT" spacing="12" style="-fx-padding: 4 0 0 0;">
+                                <Label fx:id="instructorLabel" style="-fx-font-size: 13px; -fx-text-fill: #8899b4;" />
+                                <Label style="-fx-text-fill: #4a6080;" text="•" />
+                                <Label fx:id="ratingLabel" style="-fx-font-size: 13px; -fx-text-fill: #8899b4;" />
+                                <Label style="-fx-text-fill: #4a6080;" text="•" />
+                                <Label fx:id="studentsLabel" style="-fx-font-size: 13px; -fx-text-fill: #8899b4;" />
+                            </HBox>
+                            <HBox alignment="CENTER_LEFT" spacing="12">
+                                <Label fx:id="durationLabel" style="-fx-font-size: 13px; -fx-text-fill: #4a6080;" />
+                                <Label fx:id="sectionsLabel" style="-fx-font-size: 13px; -fx-text-fill: #4a6080;" />
+                                <Label fx:id="lessonsLabel" style="-fx-font-size: 13px; -fx-text-fill: #4a6080;" />
+                            </HBox>
+                            <Label fx:id="certificateBadge" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #fde68a; -fx-background-color: rgba(253,230,138,0.12); -fx-background-radius: 999; -fx-padding: 6 14; -fx-border-color: rgba(253,230,138,0.25); -fx-border-radius: 999; -fx-border-width: 1;" text="🏆 Certificate Included" />
+                        </VBox>
+                    </HBox>
+                    <VBox alignment="TOP_CENTER" maxWidth="320" minWidth="240" prefWidth="280" spacing="14" style="-fx-background-color: rgba(255,255,255,0.05); -fx-background-radius: 20; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 20; -fx-border-width: 1; -fx-padding: 22 20; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.25), 24, 0.08, 0, 8);">
+                        <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 1.2;" text="Course Price" />
+                        <Label fx:id="priceLabel" style="-fx-font-size: 42px; -fx-font-weight: bold; -fx-text-fill: #2dd4bf;" text="" />
+                        <Button fx:id="enrollButton" maxWidth="1.7976931348623157E308" onAction="#handleEnroll" prefHeight="52" style="-fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9); -fx-text-fill: #061018; -fx-font-size: 15px; -fx-font-weight: bold; -fx-background-radius: 14; -fx-border-radius: 14; -fx-cursor: hand; -fx-padding: 12 20; -fx-effect: dropshadow(gaussian, rgba(45,212,191,0.40), 20, 0.15, 0, 4);" text="Enroll Now" />
+                        <HBox alignment="CENTER" spacing="6">
+                            <Label style="-fx-font-size: 12px;" text="🔒" />
+                            <Label style="-fx-font-size: 12px; -fx-text-fill: #8899b4;" text="Secure checkout" />
+                        </HBox>
+                        <Label style="-fx-font-size: 11px; -fx-text-fill: #4a6080; -fx-text-alignment: center;" text="30-day money-back guarantee" textAlignment="CENTER" wrapText="true" />
+                    </VBox>
+                </FlowPane>
+            </VBox>
+
+            <!-- Main + sidebar (wraps on narrow widths) -->
+            <FlowPane hgap="24" prefWrapLength="1080" style="-fx-padding: 0;" vgap="24">
+
+                <VBox maxWidth="1.7976931348623157E308" minWidth="320" prefWidth="760.0" spacing="20">
+                    <VBox prefHeight="232.0" prefWidth="875.0" spacing="14" style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 20; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 20; -fx-border-width: 1; -fx-padding: 24; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 36, 0.08, 0, 12);">
+                        <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;" text="About this course" />
+                        <TextArea fx:id="descriptionArea" editable="false" prefRowCount="6" style="-fx-background-color: transparent; -fx-control-inner-background: transparent; -fx-text-fill: #8899b4; -fx-font-size: 14px; -fx-border-color: transparent; -fx-background-insets: 0; -fx-padding: 8 0 0 0;" wrapText="true" />
+                    </VBox>
+                    <VBox spacing="12" style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 20; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 20; -fx-border-width: 1; -fx-padding: 24; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 36, 0.08, 0, 12);">
+                        <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;" text="Course Quizzes" />
+                        <VBox fx:id="quizzesBox" spacing="10" style="-fx-padding: 4 0 0 0;" />
+                    </VBox>
+                    <VBox spacing="12" style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 20; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 20; -fx-border-width: 1; -fx-padding: 24; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 36, 0.08, 0, 12);">
+                        <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;" text="Preview Lessons" />
+                        <VBox fx:id="previewLessonsBox" spacing="10" style="-fx-padding: 4 0 0 0;" />
+                    </VBox>
+                    <VBox spacing="12" style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 20; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 20; -fx-border-width: 1; -fx-padding: 24; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 36, 0.08, 0, 12);">
+                        <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;" text="Student Reviews" />
+                        <VBox fx:id="reviewsBox" spacing="10" style="-fx-padding: 4 0 0 0;" />
+                    </VBox>
+                </VBox>
+
+                <VBox alignment="TOP_LEFT" maxWidth="340" minWidth="280" prefWidth="300" spacing="0">
+                    <VBox spacing="14" style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 20; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 20; -fx-border-width: 1; -fx-padding: 24; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.30), 36, 0.08, 0, 12);">
+                        <Label style="-fx-font-size: 20px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;" text="This course includes" />
+                        <VBox fx:id="includesBox" spacing="12" style="-fx-padding: 4 0 0 0;" />
+                    </VBox>
+                </VBox>
+            </FlowPane>
+
+            <StackPane fx:id="heroStack" managed="false" visible="false" />
+        </VBox>
+    </ScrollPane>
+</StackPane>

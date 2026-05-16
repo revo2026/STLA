@@ -1,0 +1,213 @@
+/* ============================================
+   STLA Desktop — Course Player Lesson Sidebar
+   Section accordion + lesson navigation panel
+   ============================================ */
+
+/* --- Sidebar Panel --- */
+.lesson-sidebar {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-border-color: rgba(255,255,255,0.12) transparent rgba(255,255,255,0.12) rgba(255,255,255,0.12);
+    -fx-border-width: 0 0 0 1;
+    -fx-pref-width: 320;
+    -fx-min-width: 300;
+    -fx-max-width: 360;
+}
+
+.lesson-sidebar-header {
+    -fx-background-color: #111827;
+    -fx-padding: 16 20;
+    -fx-border-color: transparent transparent rgba(255,255,255,0.12) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.lesson-sidebar-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0f6ff;
+}
+
+.lesson-sidebar-subtitle {
+    -fx-font-size: 12px;
+    -fx-text-fill: #8899b4;
+}
+
+.lesson-sidebar-back-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8899b4;
+    -fx-font-size: 13px;
+    -fx-padding: 4 8;
+    -fx-cursor: hand;
+    -fx-background-radius: 6;
+    -fx-border-width: 0;
+    -fx-effect: none;
+}
+
+.lesson-sidebar-back-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-text-fill: #f0f6ff;
+}
+
+/* --- Section Accordion --- */
+.section-accordion {
+    -fx-background-color: transparent;
+    -fx-padding: 4 0;
+}
+
+.section-accordion-card {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+    -fx-border-color: transparent transparent rgba(255,255,255,0.06) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.section-accordion-header {
+    -fx-background-color: transparent;
+    -fx-padding: 14 20;
+    -fx-cursor: hand;
+}
+
+.section-accordion-header:hover {
+    -fx-background-color: #111827;
+}
+
+.section-accordion-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0f6ff;
+}
+
+.section-accordion-meta {
+    -fx-font-size: 11px;
+    -fx-text-fill: #4a6080;
+}
+
+.section-accordion-chevron {
+    -fx-font-size: 12px;
+    -fx-text-fill: #4a6080;
+}
+
+.section-accordion-body {
+    -fx-padding: 0 0 8 0;
+}
+
+/* --- Lesson Item --- */
+.lesson-item {
+    -fx-background-color: transparent;
+    -fx-padding: 10 20 10 32;
+    -fx-cursor: hand;
+    -fx-background-radius: 0;
+    -fx-border-width: 0 0 0 3;
+    -fx-border-color: transparent;
+}
+
+.lesson-item:hover {
+    -fx-background-color: #F0F9FA;
+    -fx-translate-x: 2;
+}
+
+.lesson-item-active {
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-border-color: transparent transparent transparent #D44304;
+}
+
+.lesson-item-active:hover {
+    -fx-background-color: #E0EFF1;
+}
+
+.lesson-item-icon {
+    -fx-font-size: 16px;
+}
+
+.lesson-item-title {
+    -fx-font-size: 13px;
+    -fx-text-fill: #8899b4;
+    -fx-font-weight: normal;
+}
+
+.lesson-item-active .lesson-item-title {
+    -fx-font-weight: bold;
+    -fx-text-fill: #2dd4bf;
+}
+
+.lesson-item-duration {
+    -fx-font-size: 11px;
+    -fx-text-fill: #4a6080;
+    -fx-font-family: "Consolas", "Courier New", monospace;
+}
+
+.lesson-item-preview-badge {
+    -fx-background-color: #EDE9FE;
+    -fx-text-fill: #7C3AED;
+    -fx-background-radius: 8;
+    -fx-padding: 1 6;
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+}
+
+.lesson-item-video-badge {
+    -fx-background-color: #D1FAE5;
+    -fx-text-fill: #065F46;
+    -fx-background-radius: 8;
+    -fx-padding: 1 6;
+    -fx-font-size: 9px;
+    -fx-font-weight: bold;
+}
+
+/* --- Add Section Button --- */
+.add-section-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #2dd4bf;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 14 20;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-border-color: transparent transparent rgba(255,255,255,0.12) transparent;
+    -fx-background-radius: 0;
+    -fx-effect: none;
+    -fx-alignment: CENTER-LEFT;
+}
+
+.add-section-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.08);
+    -fx-text-fill: #0F3D45;
+}
+
+/* --- Section Action Buttons --- */
+.section-action-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #fff;
+    -fx-font-size: 12px;
+    -fx-padding: 2 6;
+    -fx-cursor: hand;
+    -fx-background-radius: 6;
+    -fx-border-width: 0;
+    -fx-effect: none;
+}
+
+.section-action-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-text-fill: #fff;
+}
+
+/* --- Lesson Context Menu Buttons --- */
+.lesson-ctx-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8899b4;
+    -fx-font-size: 11px;
+    -fx-padding: 2 4;
+    -fx-cursor: hand;
+    -fx-background-radius: 4;
+    -fx-border-width: 0;
+    -fx-effect: none;
+    -fx-opacity: 0;
+}
+
+.lesson-item:hover .lesson-ctx-btn {
+    -fx-opacity: 1;
+}
+
+.lesson-ctx-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-text-fill: #f0f6ff;
+}

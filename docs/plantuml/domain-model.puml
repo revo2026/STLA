@@ -1,0 +1,209 @@
+@startuml STLA_Domain_Model
+title STLA Desktop — Domain Model
+skinparam classAttributeIconSize 0
+
+package "com.stla.domain.models" {
+
+  class Profile {
+    id: String
+    role: AppRole
+    fullName: String
+    email: String
+  }
+
+  class Student {
+    id: String
+    profileId: String
+  }
+
+  class Instructor {
+    id: String
+    profileId: String
+  }
+
+  class Admin {
+    id: String
+    profileId: String
+  }
+
+  class Category {
+    id: String
+    name: String
+  }
+
+  class Course {
+    id: String
+    instructorId: String
+    categoryId: String
+    title: String
+    price: BigDecimal
+    status: CourseStatus
+  }
+
+  class CourseSection {
+    id: String
+    courseId: String
+    title: String
+  }
+
+  class CourseLesson {
+    id: String
+    courseId: String
+    sectionId: String
+    title: String
+    videoUrl: String
+    isPreview: boolean
+  }
+
+  class LessonResource {
+    id: String
+    lessonId: String
+    title: String
+    fileUrl: String
+  }
+
+  class Quiz {
+    id: String
+    courseId: String
+    lessonId: String
+    passingScore: int
+  }
+
+  class QuizQuestion {
+    id: String
+    quizId: String
+    questionText: String
+    questionType: String
+  }
+
+  class QuizOption {
+    id: String
+    questionId: String
+    optionText: String
+    isCorrect: boolean
+  }
+
+  class Enrollment {
+    id: String
+    studentId: String
+    courseId: String
+    status: EnrollmentStatus
+    progressPercent: double
+  }
+
+  class Payment {
+    id: String
+    studentId: String
+    courseId: String
+    amount: BigDecimal
+  }
+
+  class InstructorWallet {
+    instructorId: String
+    balance: BigDecimal
+  }
+
+  class WalletTransaction {
+    id: String
+    walletId: String
+    amount: BigDecimal
+    type: WalletTransactionType
+  }
+
+  class WithdrawalRequest {
+    id: String
+    instructorId: String
+    amount: BigDecimal
+  }
+
+  class QuizAttempt {
+    id: String
+    studentId: String
+    quizId: String
+  }
+
+  class IssuedCertificate {
+    id: String
+    studentId: String
+    courseId: String
+  }
+
+  class Notification {
+    id: String
+    profileId: String
+    message: String
+  }
+
+  class Review {
+    id: String
+    studentId: String
+    courseId: String
+  }
+
+  class ActivityLog {
+    id: String
+    adminId: String
+  }
+
+  note as NProgress
+    **StudentCourseProgress** — Class not found in current codebase
+    (progress tracked via StudentCourseProgressRepository in data layer)
+
+    **LessonProgress** — Class not found in current codebase
+    (progress tracked via LessonProgressRepository in data layer)
+
+    **Lesson** — Class not found; use **CourseLesson**
+    **Resource** — Class not found; use **LessonResource**
+    **Question** — Class not found; use **QuizQuestion**
+    **Option** — Class not found; use **QuizOption**
+  end note
+}
+
+' Profile & roles
+Profile "1" --> "0..1" Student : profileId
+Profile "1" --> "0..1" Instructor : profileId
+Profile "1" --> "0..1" Admin : profileId
+
+' Course catalog
+Instructor "1" o-- "0..*" Course : instructorId
+Course --> Category : categoryId
+
+' Content hierarchy (actual model uses Section between Course and Lesson)
+Course "1" *-- "0..*" CourseSection : courseId
+CourseSection "1" *-- "0..*" CourseLesson : sectionId
+CourseLesson "1" *-- "0..*" LessonResource : lessonId
+
+' Simplified view (requested): Course → Lesson
+Course "1" *-- "0..*" CourseLesson : also linked via courseId
+
+' Quiz structure
+Course "1" *-- "0..*" Quiz : courseId
+Quiz "1" *-- "1..*" QuizQuestion : quizId
+QuizQuestion "1" *-- "2..*" QuizOption : options
+
+' Enrollment & payment
+Student "1" o-- "0..*" Enrollment : studentId
+Enrollment --> Course : courseId
+Enrollment --> Student : studentId
+Student "1" o-- "0..*" Payment : studentId
+Payment --> Course : courseId
+Payment ..> Enrollment : related purchase flow
+
+' Wallet
+Instructor "1" *-- "1" InstructorWallet
+InstructorWallet *-- "0..*" WalletTransaction
+Instructor "1" o-- "0..*" WithdrawalRequest
+
+' Other
+Student "1" o-- "0..*" QuizAttempt
+Student "1" o-- "0..*" IssuedCertificate
+Student "1" o-- "0..*" Review
+Admin "1" o-- "0..*" ActivityLog
+
+note bottom
+  CourseSection is required in codebase between
+  Course and CourseLesson; diagram shows both
+  full hierarchy and simplified Course→Lesson link.
+end note
+
+@enduml

@@ -1,0 +1,100 @@
+@startuml STLA_Strategy_Pattern
+title STLA Desktop — Strategy Pattern
+skinparam classAttributeIconSize 0
+
+package "com.stla.patterns.strategy" {
+  interface PaymentStrategy <<Strategy>> {
+    + getMethodName(): String
+    + processPayment(amount, studentId, courseId): boolean
+    + validatePaymentDetails(): boolean
+  }
+
+  class VisaPaymentStrategy <<ConcreteStrategy>> {
+    + getMethodName(): String
+    + processPayment(...): boolean
+    + validatePaymentDetails(): boolean
+  }
+
+  class WalletPaymentStrategy <<ConcreteStrategy>> {
+    + getMethodName(): String
+    + processPayment(...): boolean
+    + validatePaymentDetails(): boolean
+  }
+
+  class PayPalPaymentStrategy <<ConcreteStrategy>> {
+    + getMethodName(): String
+    + processPayment(...): boolean
+    + validatePaymentDetails(): boolean
+  }
+
+  class PaymentStrategyFactory {
+    + {static} visa(...): PaymentStrategy
+    + {static} digitalWallet(...): PaymentStrategy
+  }
+
+  interface WithdrawStrategy <<Strategy>> {
+    + validate(details): boolean
+    + process(amount, instructorId): boolean
+    + getMethodName(): String
+  }
+
+  class VisaWithdrawStrategy <<ConcreteStrategy>>
+  class DigitalWalletWithdrawStrategy <<ConcreteStrategy>>
+
+  class WithdrawStrategyFactory {
+    + {static} getStrategy(method): WithdrawStrategy
+  }
+
+  note bottom of PayPalPaymentStrategy
+    PayPalPaymentStrategy exists but is **not**
+  exposed by PaymentStrategyFactory.
+  end note
+
+  note as NReport
+    **ReportStrategy** — Class not found in current codebase
+  end note
+}
+
+PaymentStrategy <|.. VisaPaymentStrategy
+PaymentStrategy <|.. WalletPaymentStrategy
+PaymentStrategy <|.. PayPalPaymentStrategy
+
+WithdrawStrategy <|.. VisaWithdrawStrategy
+WithdrawStrategy <|.. DigitalWalletWithdrawStrategy
+
+PaymentStrategyFactory ..> VisaPaymentStrategy
+PaymentStrategyFactory ..> WalletPaymentStrategy
+WithdrawStrategyFactory ..> VisaWithdrawStrategy
+WithdrawStrategyFactory ..> DigitalWalletWithdrawStrategy
+
+package "com.stla.patterns.facade" {
+  class EnrollmentFacade <<Facade>>
+}
+
+package "com.stla.services" {
+  class PaymentService
+  class WalletService
+}
+
+package "com.stla.ui.student" {
+  class CheckoutController
+}
+
+package "com.stla.ui.instructor" {
+  class InstructorWithdrawController
+}
+
+EnrollmentFacade ..> PaymentStrategy : purchaseCourse(...)
+PaymentService ..> PaymentStrategy : processCoursePurchase(...)
+CheckoutController ..> PaymentStrategyFactory
+CheckoutController --> EnrollmentFacade
+InstructorWithdrawController ..> WithdrawStrategyFactory
+WalletService ..> WithdrawStrategyFactory
+
+note right of PaymentStrategy
+  Runtime algorithm selection for
+  checkout and withdrawals without
+  changing EnrollmentFacade / PaymentService.
+end note
+
+@enduml

@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.instructor.InstructorWithdrawController"
+      spacing="0" styleClass="withdraw-page"
+      stylesheets="@../../css/app.css, @../../css/cards.css, @../../css/buttons.css, @../../css/wallet.css, @../../css/dark-theme.css"
+      style="-fx-background-color: #0a0f1e;">
+
+    <!-- 1. Header hero -->
+    <StackPane style="-fx-padding: 36 40 28 40; -fx-min-height: 168;">
+        <HBox alignment="TOP_LEFT" spacing="0" pickOnBounds="false" mouseTransparent="true"
+              StackPane.alignment="TOP_LEFT" maxWidth="Infinity">
+            <Region style="-fx-pref-width: 280; -fx-pref-height: 280; -fx-min-width: 200; -fx-min-height: 200;
+                         -fx-background-radius: 200; -fx-max-width: Infinity; -fx-max-height: Infinity;
+                         -fx-background-color: radial-gradient(center 45% 45%, radius 58%, rgba(45,212,191,0.28), transparent 68%);"/>
+            <Pane HBox.hgrow="ALWAYS" minWidth="24"/>
+            <Region style="-fx-pref-width: 240; -fx-pref-height: 240; -fx-min-width: 160; -fx-min-height: 160;
+                         -fx-background-radius: 200; -fx-max-width: Infinity; -fx-max-height: Infinity;
+                         -fx-background-color: radial-gradient(center 55% 45%, radius 55%, rgba(14,165,233,0.22), transparent 68%);"/>
+        </HBox>
+        <VBox spacing="10" alignment="TOP_LEFT" maxWidth="Infinity">
+            <Label text="💸 Withdraw Earnings" styleClass="withdraw-hero-title"/>
+            <Label text="Instant withdrawal from your available balance" styleClass="withdraw-hero-subtitle"/>
+            <HBox alignment="CENTER_LEFT">
+                <Label fx:id="availableBalanceLabel" text="Available: \$0.00" styleClass="withdraw-balance-pill"/>
+            </HBox>
+        </VBox>
+    </StackPane>
+
+    <!-- 2. Main content: two-column (wraps on narrow widths) -->
+    <FlowPane hgap="28" vgap="28" prefWrapLength="980" maxWidth="Infinity"
+              style="-fx-padding: 0 40 28 40;">
+        <!-- Withdrawal form card -->
+        <VBox spacing="18" styleClass="withdraw-form-glass" prefWidth="480" minWidth="420" maxWidth="520">
+            <Label text="New Withdrawal" styleClass="withdraw-section-heading"/>
+
+            <VBox spacing="8">
+                <Label text="AMOUNT (USD)" styleClass="form-label"/>
+                <TextField fx:id="amountField" promptText="0.00" styleClass="amount-field, withdraw-input" prefHeight="48"/>
+            </VBox>
+
+            <VBox spacing="10">
+                <Label text="WITHDRAWAL METHOD" styleClass="form-label"/>
+                <HBox fx:id="methodRow" spacing="14" alignment="CENTER_LEFT">
+                    <VBox fx:id="visaMethodCard" spacing="6" alignment="CENTER" styleClass="method-card, method-card-active"
+                          prefWidth="200" minHeight="100" minWidth="160" onMouseClicked="#handleSelectVisa">
+                        <Label styleClass="withdraw-method-emoji" text="💳"/>
+                        <Label text="Visa Card" styleClass="withdraw-method-title"/>
+                        <Label text="Withdraw to your bank card" styleClass="withdraw-method-desc" wrapText="true" textAlignment="CENTER"/>
+                    </VBox>
+                    <VBox fx:id="walletMethodCard" spacing="6" alignment="CENTER" styleClass="method-card"
+                          prefWidth="200" minHeight="100" minWidth="160" onMouseClicked="#handleSelectWallet">
+                        <Label styleClass="withdraw-method-emoji" text="📱"/>
+                        <Label text="Digital Wallet" styleClass="withdraw-method-title"/>
+                        <Label text="Send to mobile wallet" styleClass="withdraw-method-desc" wrapText="true" textAlignment="CENTER"/>
+                    </VBox>
+                </HBox>
+            </VBox>
+
+            <VBox spacing="8">
+                <Label text="PAYMENT DETAILS" styleClass="form-label"/>
+                <VBox fx:id="paymentDetailsContainer" spacing="12">
+                    <VBox fx:id="visaFormBox" spacing="12" visible="true" managed="true">
+                        <Label text="🔒 Your card information is encrypted." styleClass="withdraw-field-hint" wrapText="true"/>
+                        <VBox spacing="6">
+                            <Label text="CARDHOLDER NAME" styleClass="form-label"/>
+                            <TextField fx:id="cardholderNameField" promptText="Name on card" prefHeight="44" styleClass="withdraw-input"/>
+                        </VBox>
+                        <VBox spacing="6">
+                            <Label text="CARD NUMBER" styleClass="form-label"/>
+                            <TextField fx:id="cardNumberField" promptText="1234 5678 9012 3456" prefHeight="44" styleClass="withdraw-input"/>
+                        </VBox>
+                        <HBox spacing="12" alignment="CENTER_LEFT">
+                            <VBox spacing="6" HBox.hgrow="ALWAYS">
+                                <Label text="EXPIRY (MM/YY)" styleClass="form-label"/>
+                                <TextField fx:id="expiryDateField" promptText="MM/YY" prefHeight="44" styleClass="withdraw-input"/>
+                            </VBox>
+                            <VBox spacing="6" prefWidth="108">
+                                <Label text="CVV" styleClass="form-label"/>
+                                <TextField fx:id="cvvField" promptText="123" prefHeight="44" styleClass="withdraw-input"/>
+                            </VBox>
+                        </HBox>
+                    </VBox>
+                    <VBox fx:id="walletFormBox" spacing="12" visible="false" managed="false">
+                        <Label text="You will receive the funds directly to your selected wallet." styleClass="withdraw-field-hint" wrapText="true"/>
+                        <VBox spacing="6">
+                            <Label text="WALLET PROVIDER" styleClass="form-label"/>
+                            <ComboBox fx:id="walletProviderCombo" prefHeight="44" styleClass="combo-box, withdraw-input"/>
+                        </VBox>
+                        <VBox spacing="6">
+                            <Label text="MOBILE NUMBER" styleClass="form-label"/>
+                            <TextField fx:id="walletPhoneField" promptText="e.g. 01012345678" prefHeight="44" styleClass="withdraw-input"/>
+                        </VBox>
+                        <VBox spacing="6">
+                            <Label text="ACCOUNT NAME (OPTIONAL)" styleClass="form-label"/>
+                            <TextField fx:id="walletAccountNameField" promptText="Registered name on wallet" prefHeight="44" styleClass="withdraw-input"/>
+                        </VBox>
+                    </VBox>
+                </VBox>
+            </VBox>
+
+            <VBox spacing="8">
+                <Label text="NOTES (OPTIONAL)" styleClass="form-label"/>
+                <TextArea fx:id="notesField" promptText="Additional notes..." prefRowCount="2" wrapText="true" styleClass="withdraw-textarea"/>
+            </VBox>
+
+            <Label fx:id="errorLabel" text="" styleClass="withdraw-error-banner" wrapText="true" visible="false" managed="false"/>
+
+            <HBox spacing="14" alignment="CENTER_RIGHT">
+                <ProgressIndicator fx:id="submitLoading" prefWidth="28" prefHeight="28" styleClass="withdraw-spinner" visible="false" managed="false"/>
+                <Button fx:id="cancelBtn" text="Clear" styleClass="btn-outline, withdraw-clear-btn" onAction="#handleClear"/>
+                <Button fx:id="submitBtn" text="Confirm Withdraw" styleClass="withdraw-btn" onAction="#handleSubmit"/>
+            </HBox>
+        </VBox>
+
+        <!-- Summary sidebar -->
+        <VBox spacing="14" prefWidth="300" minWidth="260" maxWidth="340">
+            <VBox spacing="10" styleClass="wallet-summary-card, withdraw-stat-card, wallet-card-available" style="-fx-padding: 20 22;">
+                <Label text="💵" styleClass="wallet-card-icon"/>
+                <Label text="Available Balance" styleClass="wallet-card-label"/>
+                <Label fx:id="balanceCardAmount" text="\$0.00" styleClass="wallet-card-amount, withdraw-stat-figure"/>
+            </VBox>
+            <VBox spacing="10" styleClass="wallet-summary-card, withdraw-stat-card, wallet-card-withdrawn" style="-fx-padding: 20 22;">
+                <Label text="💳" styleClass="wallet-card-icon"/>
+                <Label text="Total Withdrawn" styleClass="wallet-card-label"/>
+                <Label fx:id="totalWithdrawnLabel" text="\$0.00" styleClass="wallet-card-amount, withdraw-stat-figure"/>
+            </VBox>
+            <VBox styleClass="withdraw-info-glass" style="-fx-padding: 14 16;">
+                <Label text="Withdrawals are processed instantly. Funds are deducted from your available balance immediately."
+                       wrapText="true" styleClass="withdraw-info-muted"/>
+            </VBox>
+        </VBox>
+    </FlowPane>
+
+    <!-- 3. History section -->
+    <VBox spacing="16" VBox.vgrow="ALWAYS" style="-fx-padding: 0 40 40 40;" maxWidth="Infinity">
+        <VBox spacing="14" styleClass="withdraw-history-glass" VBox.vgrow="ALWAYS" maxWidth="Infinity">
+            <HBox alignment="CENTER_LEFT" spacing="14" style="-fx-padding: 22 24 0 24;">
+                <Label text="Withdrawal History" styleClass="withdraw-section-heading" HBox.hgrow="ALWAYS"/>
+                <Button fx:id="refreshHistoryBtn" text="↻ Refresh" styleClass="btn-outline, btn-sm" onAction="#handleRefresh"/>
+            </HBox>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED" prefHeight="300" minHeight="200"
+                        VBox.vgrow="ALWAYS" styleClass="withdraw-history-scroll" maxWidth="Infinity">
+                <VBox fx:id="historyContainer" spacing="10" style="-fx-padding: 8 24 24 24;"/>
+            </ScrollPane>
+        </VBox>
+    </VBox>
+</VBox>

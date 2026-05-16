@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.components.CourseCardController"
+      fx:id="cardRoot" spacing="0" styleClass="catalog-course-card" prefWidth="280" minHeight="380" maxHeight="380">
+
+    <StackPane fx:id="thumbnailPane" prefHeight="160" minHeight="160" maxHeight="160" styleClass="course-card-thumb">
+        <Region fx:id="thumbSkeleton" styleClass="course-thumb-skeleton"/>
+        <VBox fx:id="thumbPlaceholder" alignment="CENTER" styleClass="course-thumb-placeholder" visible="false" managed="false">
+            <Label text="📘" styleClass="course-thumb-placeholder-icon"/>
+        </VBox>
+        <ImageView fx:id="thumbnailView" preserveRatio="false" pickOnBounds="true" visible="false" StackPane.alignment="CENTER"/>
+        <Region styleClass="course-thumb-gradient-overlay" mouseTransparent="true"/>
+    </StackPane>
+
+    <VBox spacing="8" styleClass="course-card-body">
+        <Label fx:id="titleLabel" text="Course Title" styleClass="course-title" wrapText="true"/>
+        <Label fx:id="instructorLabel" text="Instructor" styleClass="course-instructor"/>
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <Label fx:id="ratingLabel" text="⭐ 0.0" styleClass="course-rating"/>
+            <Label fx:id="studentsLabel" text="👥 0" styleClass="course-meta"/>
+        </HBox>
+        <HBox spacing="8" alignment="CENTER_LEFT">
+            <Label fx:id="levelLabel" text="BEGINNER" styleClass="badge, badge-student"/>
+            <Label fx:id="durationLabel" text="⏱ 0h" styleClass="course-meta"/>
+        </HBox>
+        <HBox spacing="6" alignment="CENTER_LEFT">
+            <Label fx:id="quizBadgeLabel" text="🎯 0 Quizzes" styleClass="quiz-badge-quiz" visible="false" managed="false"/>
+            <Label fx:id="certificateBadgeLabel" text="🏆 Certificate" styleClass="quiz-badge-quiz" visible="false" managed="false"/>
+        </HBox>
+        <HBox alignment="CENTER_LEFT" spacing="8">
+            <Label fx:id="priceLabel" text="Free" styleClass="course-price" HBox.hgrow="ALWAYS"/>
+            <Button fx:id="favoriteButton" text="♡" styleClass="course-favorite-btn" onAction="#handleFavorite"/>
+        </HBox>
+        <Button fx:id="enrollButton" text="View Course" styleClass="btn-accent, course-enroll-btn" maxWidth="Infinity" onAction="#handleEnroll"/>
+    </VBox>
+</VBox>

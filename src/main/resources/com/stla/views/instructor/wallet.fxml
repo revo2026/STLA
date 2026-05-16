@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.instructor.WalletController"
+      spacing="20" stylesheets="@../../css/app.css, @../../css/cards.css, @../../css/buttons.css, @../../css/wallet.css, @../../css/dark-theme.css"
+      style="-fx-padding: 28 32; -fx-background-color: #0a0f1e;">
+    <HBox spacing="16" alignment="CENTER_LEFT">
+        <Label text="💰 Wallet &amp; Earnings" style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="btnWithdraw" text="💸 Withdraw Now" styleClass="withdraw-btn" onAction="#handleWithdraw"/>
+    </HBox>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+        <VBox fx:id="walletContainer" spacing="24"/>
+    </ScrollPane>
+</VBox>

@@ -1,0 +1,590 @@
+/* ============================================
+   STLA Desktop — Video Player Styles
+   Professional course player inspired by
+   Udemy/Coursera instructor panels.
+   ============================================ */
+
+/* --- Player Container --- */
+.player-container {
+    -fx-background-color: #0a0f1e;
+    -fx-background-radius: 16;
+    -fx-border-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 24, 0, 0, 8);
+    -fx-padding: 0;
+}
+
+/* --- Player Header (breadcrumb + actions) --- */
+.player-header {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 16 16 0 0;
+    -fx-padding: 16 24;
+    -fx-border-color: transparent transparent rgba(255,255,255,0.12) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.player-breadcrumb {
+    -fx-font-size: 12px;
+    -fx-text-fill: #4a6080;
+}
+
+.player-lesson-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0f6ff;
+}
+
+.player-meta {
+    -fx-font-size: 11px;
+    -fx-text-fill: #4a6080;
+}
+
+.preview-badge {
+    -fx-background-color: #EDE9FE;
+    -fx-text-fill: #7C3AED;
+    -fx-background-radius: 10;
+    -fx-padding: 2 10;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* --- Video Area --- */
+.video-area {
+    -fx-background-color: #000000;
+    -fx-min-height: 400;
+    -fx-pref-height: 480;
+}
+
+.video-placeholder {
+    -fx-background-color: linear-gradient(to bottom right, #0a0f1e, #111827);
+    -fx-background-radius: 0;
+    -fx-alignment: center;
+}
+
+.video-placeholder-icon {
+    -fx-font-size: 64px;
+    -fx-text-fill: #3A4554;
+}
+
+.video-placeholder-text {
+    -fx-font-size: 16px;
+    -fx-text-fill: #8899b4;
+}
+
+/* --- Controls Bar --- */
+.player-controls {
+    -fx-background-color: linear-gradient(to top, rgba(0,0,0,0.85), rgba(0,0,0,0.0));
+    -fx-padding: 40 16 12 16;
+}
+
+.player-controls-bar {
+    -fx-background-color: rgba(15, 20, 25, 0.92);
+    -fx-background-radius: 12;
+    -fx-padding: 8 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.3), 8, 0, 0, 2);
+}
+
+/* --- Play/Pause Button --- */
+.player-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: white;
+    -fx-font-size: 18px;
+    -fx-padding: 6 10;
+    -fx-cursor: hand;
+    -fx-background-radius: 8;
+    -fx-border-width: 0;
+    -fx-effect: none;
+}
+
+.player-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.12);
+}
+
+.player-btn:pressed {
+    -fx-scale-x: 0.9;
+    -fx-scale-y: 0.9;
+}
+
+/* --- Volume Slider --- */
+.player-volume .track {
+    -fx-background-color: rgba(255,255,255,0.2);
+    -fx-background-radius: 4;
+    -fx-pref-height: 4;
+}
+
+.player-volume .bar {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 4;
+    -fx-background-insets: 0;
+}
+
+.player-volume .thumb {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 50;
+    -fx-pref-width: 12;
+    -fx-pref-height: 12;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.4), 4, 0, 0, 1);
+}
+
+/* --- Progress/Timeline Slider --- */
+.player-timeline .track {
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-background-radius: 4;
+    -fx-pref-height: 5;
+}
+
+.player-timeline .bar {
+    -fx-background-color: linear-gradient(to right, #D44304, #F06428);
+    -fx-background-radius: 4;
+    -fx-background-insets: 0;
+}
+
+.player-timeline .thumb {
+    -fx-background-color: #D44304;
+    -fx-background-radius: 50;
+    -fx-pref-width: 14;
+    -fx-pref-height: 14;
+    -fx-effect: dropshadow(gaussian, rgba(212,67,4,0.5), 6, 0, 0, 0);
+}
+
+.player-timeline:hover .thumb {
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+}
+
+/* --- Time Labels --- */
+.player-time {
+    -fx-text-fill: rgba(255,255,255,0.8);
+    -fx-font-size: 12px;
+    -fx-font-family: "Consolas", "Courier New", monospace;
+}
+
+/* --- Speed Selector --- */
+.speed-btn {
+    -fx-background-color: rgba(255,255,255,0.1);
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-padding: 4 10;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-effect: none;
+}
+
+.speed-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.2);
+}
+
+.speed-menu-item {
+    -fx-text-fill: #f0f6ff;
+    -fx-font-size: 13px;
+    -fx-padding: 8 20;
+}
+
+.speed-menu-item:hover {
+    -fx-background-color: rgba(255,255,255,0.08);
+}
+
+.speed-active {
+    -fx-font-weight: bold;
+    -fx-text-fill: #D44304;
+}
+
+/* --- Buffering Spinner --- */
+.player-spinner {
+    -fx-pref-width: 48;
+    -fx-pref-height: 48;
+}
+
+.player-spinner .indicator .segment {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+}
+
+/* --- Action Buttons Row --- */
+.player-actions {
+    -fx-padding: 12 24;
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-border-color: transparent transparent rgba(255,255,255,0.12) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.player-action-btn {
+    -fx-background-color: rgba(255,255,255,0.06);
+    -fx-text-fill: #8899b4;
+    -fx-font-size: 13px;
+    -fx-padding: 8 16;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-effect: none;
+    -fx-font-weight: 600;
+}
+
+.player-action-btn:hover {
+    -fx-background-color: rgba(255,255,255,0.12);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 4, 0, 0, 2);
+}
+
+.player-action-btn-danger {
+    -fx-text-fill: #EF4444;
+}
+
+.player-action-btn-danger:hover {
+    -fx-background-color: #FEE2E2;
+}
+
+.player-action-btn-primary {
+    -fx-background-color: #2dd4bf;
+    -fx-text-fill: white;
+}
+
+.player-action-btn-primary:hover {
+    -fx-background-color: #0F3D45;
+    -fx-effect: dropshadow(gaussian, rgba(14,74,84,0.2), 8, 0, 0, 2);
+}
+
+/* --- Tab Bar --- */
+.player-tabs {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-padding: 0 24;
+    -fx-border-color: transparent transparent rgba(255,255,255,0.12) transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.player-tab {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8899b4;
+    -fx-font-size: 14px;
+    -fx-font-weight: 600;
+    -fx-padding: 14 20;
+    -fx-cursor: hand;
+    -fx-border-width: 0 0 3 0;
+    -fx-border-color: transparent;
+    -fx-background-radius: 0;
+    -fx-effect: none;
+}
+
+.player-tab:hover {
+    -fx-text-fill: #f0f6ff;
+    -fx-background-color: #111827;
+}
+
+.player-tab-active {
+    -fx-text-fill: #2dd4bf;
+    -fx-border-color: transparent transparent #D44304 transparent;
+}
+
+/* --- Tab Content --- */
+.player-tab-content {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-padding: 24;
+}
+
+/* --- Fullscreen Mode --- */
+.player-fullscreen {
+    -fx-background-color: #000000;
+    -fx-background-radius: 0;
+}
+
+.player-controls-fullscreen {
+    -fx-background-color: rgba(15, 20, 25, 0.88);
+    -fx-background-radius: 14;
+    -fx-padding: 12 28;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 16, 0, 0, 4);
+    -fx-max-width: 900;
+}
+
+.player-controls-fullscreen .player-btn {
+    -fx-font-size: 22px;
+    -fx-padding: 8 14;
+}
+
+.player-controls-fullscreen .player-time {
+    -fx-font-size: 14px;
+}
+
+.player-controls-fullscreen .speed-btn {
+    -fx-font-size: 14px;
+    -fx-padding: 6 14;
+}
+
+.player-controls-fullscreen .player-timeline .track {
+    -fx-pref-height: 6;
+}
+
+.player-controls-fullscreen .player-timeline .thumb {
+    -fx-pref-width: 16;
+    -fx-pref-height: 16;
+}
+
+.player-controls-fullscreen .player-volume {
+    -fx-pref-width: 100;
+    -fx-max-width: 100;
+}
+
+/* ============================================
+   Instructor Course Player — Premium Studio
+   (scoped to .course-player-studio)
+   ============================================ */
+
+.course-player-studio .lesson-sidebar {
+    -fx-background-color: rgba(15, 23, 42, 0.92);
+    -fx-border-color: transparent rgba(255, 255, 255, 0.12) transparent transparent;
+    -fx-border-width: 0 1 0 0;
+    -fx-pref-width: 340;
+    -fx-min-width: 300;
+    -fx-max-width: 360;
+    -fx-padding: 0;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.35), 32, 0.1, 4, 0);
+}
+
+.course-player-studio .lesson-sidebar-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent rgba(255, 255, 255, 0.1) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 20 18 16 18;
+}
+
+.course-player-studio .studio-sidebar-course-title {
+    -fx-font-family: "Georgia", "Times New Roman", serif;
+    -fx-font-size: 22px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0f6ff;
+}
+
+.course-player-studio .lesson-sidebar-subtitle {
+    -fx-font-family: "Segoe UI", system-ui, sans-serif;
+    -fx-font-size: 13px;
+    -fx-text-fill: #8899b4;
+}
+
+.course-player-studio .lesson-sidebar-back-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1;
+    -fx-background-radius: 12;
+    -fx-padding: 8 14;
+    -fx-text-fill: #f0f6ff;
+}
+
+.course-player-studio .lesson-sidebar-back-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+.course-player-studio .studio-sidebar-scroll {
+    -fx-background-color: transparent;
+    -fx-padding: 0;
+}
+
+.course-player-studio .studio-sidebar-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.course-player-studio .studio-add-section-bar {
+    -fx-padding: 14 16 18 16;
+    -fx-border-color: rgba(255, 255, 255, 0.1) transparent transparent transparent;
+    -fx-border-width: 1 0 0 0;
+    -fx-background-color: rgba(0, 0, 0, 0.15);
+}
+
+.course-player-studio .studio-add-section-gradient {
+    -fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9);
+    -fx-text-fill: #061018;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 14 20;
+    -fx-background-radius: 14;
+    -fx-min-height: 48;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(gaussian, rgba(45, 212, 191, 0.35), 18, 0.12, 0, 6);
+}
+
+.course-player-studio .studio-add-section-gradient:hover {
+    -fx-background-color: linear-gradient(to right, #5eead4, #38bdf8);
+}
+
+.course-player-studio .studio-workspace-stack {
+    -fx-background-color: #0a0f1e;
+}
+
+.course-player-studio .studio-workspace-main {
+    -fx-padding: 0 28 24 28;
+    -fx-spacing: 0;
+    -fx-font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+.course-player-studio .studio-player-header {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-background-radius: 16;
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1;
+    -fx-border-radius: 16;
+    -fx-padding: 24;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.38), 48, 0.1, 0, 16);
+    -fx-spacing: 10;
+}
+
+.course-player-studio .studio-breadcrumb {
+    -fx-font-family: "Consolas", "Courier New", monospace;
+    -fx-font-size: 12px;
+    -fx-text-fill: #4a6080;
+}
+
+.course-player-studio .studio-lesson-title {
+    -fx-font-family: "Georgia", "Times New Roman", serif;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f0f6ff;
+}
+
+.course-player-studio .studio-meta-text {
+    -fx-font-size: 13px;
+    -fx-text-fill: #8899b4;
+}
+
+.course-player-studio .studio-preview-badge {
+    -fx-background-color: linear-gradient(to right, rgba(245, 158, 11, 0.35), rgba(234, 179, 8, 0.28));
+    -fx-text-fill: #fde68a;
+    -fx-background-radius: 999;
+    -fx-padding: 4 14;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-border-color: rgba(245, 158, 11, 0.45);
+    -fx-border-width: 1;
+    -fx-border-radius: 999;
+}
+
+.course-player-studio .studio-action-row {
+    -fx-padding: 14 4 18 4;
+    -fx-spacing: 10;
+}
+
+.course-player-studio .studio-ghost-btn {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-width: 1;
+    -fx-background-radius: 12;
+    -fx-text-fill: #f0f6ff;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 10 16;
+    -fx-cursor: hand;
+}
+
+.course-player-studio .studio-ghost-btn:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.1);
+}
+
+.course-player-studio .studio-danger-btn {
+    -fx-background-color: rgba(239, 68, 68, 0.12);
+    -fx-border-color: rgba(239, 68, 68, 0.25);
+    -fx-border-width: 1;
+    -fx-background-radius: 12;
+    -fx-text-fill: #ff8a8a;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 10 16;
+    -fx-cursor: hand;
+}
+
+.course-player-studio .studio-danger-btn:hover {
+    -fx-background-color: rgba(239, 68, 68, 0.2);
+}
+
+.course-player-studio .studio-primary-gradient-btn {
+    -fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9);
+    -fx-text-fill: #061018;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10 22;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+    -fx-effect: dropshadow(gaussian, rgba(45, 212, 191, 0.35), 16, 0.12, 0, 4);
+}
+
+.course-player-studio .studio-primary-gradient-btn:hover {
+    -fx-background-color: linear-gradient(to right, #5eead4, #38bdf8);
+}
+
+.course-player-studio .studio-video-chrome {
+    -fx-padding: 20 0 16 0;
+}
+
+.course-player-studio .studio-video-container {
+    -fx-background-color: #000000;
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-width: 1;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.5), 40, 0.1, 0, 12);
+    -fx-padding: 0;
+}
+
+.course-player-studio .studio-tabs-outer {
+    -fx-padding: 8 0 12 0;
+}
+
+.course-player-studio .studio-tab-pill-bar {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-background-radius: 14;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-width: 1;
+    -fx-border-radius: 14;
+    -fx-padding: 4 6;
+    -fx-spacing: 6;
+}
+
+.course-player-studio .studio-tab-btn {
+    -fx-background-color: transparent;
+    -fx-text-fill: #8899b4;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-padding: 10 18;
+    -fx-background-radius: 10;
+    -fx-cursor: hand;
+    -fx-border-width: 0;
+}
+
+.course-player-studio .studio-tab-btn:hover {
+    -fx-text-fill: #f0f6ff;
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+}
+
+.course-player-studio .studio-tab-btn-active {
+    -fx-background-color: rgba(45, 212, 191, 0.15);
+    -fx-text-fill: #2dd4bf;
+}
+
+.course-player-studio .studio-tab-scroll {
+    -fx-background-color: transparent;
+}
+
+.course-player-studio .studio-tab-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+
+.course-player-studio .studio-tab-body {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-background-radius: 20;
+    -fx-border-color: rgba(255, 255, 255, 0.08);
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.25), 24, 0.08, 0, 8);
+}
+
+/* Sidebar lesson rows — dark glass (override light hover from sidebar.css) */
+.course-player-studio .lesson-item:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.06);
+    -fx-translate-x: 0;
+}
+
+.course-player-studio .lesson-item-active {
+    -fx-background-color: rgba(45, 212, 191, 0.1);
+    -fx-border-color: transparent transparent transparent #2dd4bf;
+}
+
+.course-player-studio .lesson-item-active:hover {
+    -fx-background-color: rgba(45, 212, 191, 0.14);
+}

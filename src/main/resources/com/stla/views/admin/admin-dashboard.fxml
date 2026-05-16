@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.admin.AdminDashboardController"
+            fx:id="rootPane" prefWidth="1400" prefHeight="900">
+    <left>
+        <VBox styleClass="sidebar" spacing="0">
+            <VBox styleClass="sidebar-header" spacing="4">
+                <Label text="📚 STLA" styleClass="sidebar-logo"/>
+                <Label text="Admin Panel" styleClass="sidebar-subtitle"/>
+            </VBox>
+            <Region styleClass="sidebar-separator"/>
+            <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+                <VBox spacing="2" style="-fx-padding: 8 0;">
+                    <Label text="OVERVIEW" styleClass="sidebar-section-title"/>
+                    <Button text="🏠  Dashboard" styleClass="sidebar-item, sidebar-item-active" onAction="#handleNavDashboard"/>
+                    <Label text="MANAGEMENT" styleClass="sidebar-section-title"/>
+                    <Button text="👥  Users" styleClass="sidebar-item" onAction="#handleNavUsers"/>
+                    <Button text="📚  Courses" styleClass="sidebar-item" onAction="#handleNavCourses"/>
+                    <Button text="📁  Categories" styleClass="sidebar-item" onAction="#handleNavCategories"/>
+                    <Button text="✅  Verifications" styleClass="sidebar-item" onAction="#handleNavVerifications"/>
+                    <Button text="📋  Course Reviews" styleClass="sidebar-item" onAction="#handleNavCourseReview"/>
+                    <Label text="FINANCE" styleClass="sidebar-section-title"/>
+                    <Button text="💳  Payments" styleClass="sidebar-item" onAction="#handleNavPayments"/>
+                    <Button text="🏦  Admin Wallet" styleClass="sidebar-item" onAction="#handleNavAdminWallet"/>
+                    <Button text="💸  Withdrawal History" styleClass="sidebar-item" onAction="#handleNavWithdrawals"/>
+                    <Label text="SYSTEM" styleClass="sidebar-section-title"/>
+                    <Button text="🔔  Notifications" styleClass="sidebar-item" onAction="#handleNavNotifications"/>
+                </VBox>
+            </ScrollPane>
+            <VBox styleClass="sidebar-user" spacing="4">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <StackPane fx:id="sidebarAvatarContainer" prefWidth="36" prefHeight="36"/>
+                    <VBox spacing="2">
+                        <Label fx:id="userNameLabel" text="Admin" styleClass="sidebar-user-name"/>
+                        <Label text="ADMIN" styleClass="sidebar-user-role" style="-fx-text-fill: #EF4444;"/>
+                    </VBox>
+                </HBox>
+                <Region prefHeight="6"/>
+                <Button text="🚪  Sign Out" styleClass="sidebar-item" style="-fx-text-fill: #EF6B6B;" onAction="#handleLogout"/>
+            </VBox>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="0">
+            <HBox styleClass="top-header" alignment="CENTER_LEFT" spacing="12">
+                <VBox HBox.hgrow="ALWAYS">
+                    <Label fx:id="pageTitle" text="Admin Dashboard" styleClass="page-title"/>
+                    <Label fx:id="welcomeLabel" text="Platform overview and management" styleClass="page-subtitle"/>
+                </VBox>
+                <Button text="🌙" styleClass="notification-bell" onAction="#handleToggleDarkMode"/>
+                <StackPane fx:id="notificationBellHost" prefWidth="40" prefHeight="40"/>
+                <StackPane fx:id="headerAvatarContainer" prefWidth="36" prefHeight="36"/>
+            </HBox>
+            <ScrollPane fx:id="contentScroll" fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent;" VBox.vgrow="ALWAYS">
+                <VBox fx:id="contentArea" styleClass="content-area" spacing="24">
+                    <HBox fx:id="statsRow" spacing="20"/>
+                    <VBox spacing="12">
+                        <Label text="Recent Users" styleClass="section-title"/>
+                        <VBox fx:id="recentUsersBox" spacing="8"><Label text="Loading..." styleClass="text-secondary"/></VBox>
+                    </VBox>
+                </VBox>
+            </ScrollPane>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.admin.WithdrawalsController"
+      spacing="16" styleClass="withdrawals-page" style="-fx-padding: 28 32; -fx-background-color: #0a0f1e;">
+    <Label text="💸 Instructor Withdrawal History" styleClass="heading-1"/>
+    <Label text="Completed withdrawals — read only (no approval workflow)" styleClass="subtitle"/>
+    <HBox spacing="12" alignment="CENTER_LEFT">
+        <TextField fx:id="searchField" promptText="Search instructor name or email..." HBox.hgrow="ALWAYS" styleClass="search-field"/>
+        <Button text="↻ Refresh" styleClass="btn-outline, btn-sm" onAction="#handleRefresh"/>
+    </HBox>
+    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" VBox.vgrow="ALWAYS" style="-fx-background-color: transparent;">
+        <VBox fx:id="withdrawalsContainer" spacing="4"/>
+    </ScrollPane>
+</VBox>

@@ -1,0 +1,470 @@
+/* ============================================
+   STLA Desktop — Dark Theme
+   ============================================ */
+
+.dark-theme .root,
+.dark-theme {
+    -fx-background-color: #0a0f1e;
+}
+
+/* --- Dark Content Area --- */
+.dark-theme .content-area {
+    -fx-background-color: #0a0f1e;
+}
+
+.dark-theme .scroll-pane,
+.dark-theme .scroll-pane > .viewport {
+    -fx-background-color: #0a0f1e;
+}
+
+/* --- Dark Cards --- */
+.dark-theme .card,
+.dark-theme .stat-card,
+.dark-theme .course-card,
+.dark-theme .catalog-course-card {
+    -fx-background-color: #111827;
+    -fx-border-color: #2A3544;
+}
+
+.dark-theme .card:hover,
+.dark-theme .stat-card:hover,
+.dark-theme .course-card:hover,
+.dark-theme .catalog-course-card:hover {
+    -fx-border-color: #2dd4bf;
+    -fx-effect: dropshadow(gaussian, rgba(14,74,84,0.25), 20, 0, 0, 6);
+}
+
+.dark-theme .catalog-page {
+    -fx-background-color: #0a0f1e;
+}
+
+.dark-theme .catalog-course-card .course-title {
+    -fx-text-fill: #f0f6ff;
+}
+
+.dark-theme .catalog-course-card .course-instructor,
+.dark-theme .catalog-course-card .course-meta {
+    -fx-text-fill: #4a6080;
+}
+
+.dark-theme .stat-card .stat-value {
+    -fx-text-fill: #f0f6ff;
+}
+
+.dark-theme .stat-card .stat-label {
+    -fx-text-fill: #ffffff;
+}
+
+/* --- Dark Text --- */
+.dark-theme .heading-1,
+.dark-theme .heading-2,
+.dark-theme .heading-3,
+.dark-theme .page-title {
+    -fx-text-fill: #f0f6ff;
+}
+
+.dark-theme .subtitle,
+.dark-theme .text-secondary,
+.dark-theme .page-subtitle {
+    -fx-text-fill: #4a6080;
+}
+
+.dark-theme .course-title {
+    -fx-text-fill: #f0f6ff;
+}
+
+/* --- Dark Top Header --- */
+.dark-theme .top-header {
+    -fx-background-color: #111827;
+    -fx-border-color: transparent transparent #2A3544 transparent;
+}
+
+/* --- Dark Sidebar (stays dark — no change needed) --- */
+
+/* --- Dark Form Fields --- */
+.dark-theme .text-field,
+.dark-theme .password-field,
+.dark-theme .combo-box,
+.dark-theme .search-field {
+    -fx-background-color: #111827;
+    -fx-border-color: #2A3544;
+    -fx-text-fill: #f0f6ff;
+    -fx-prompt-text-fill: #8899b4;
+}
+
+.dark-theme .text-field:focused,
+.dark-theme .password-field:focused,
+.dark-theme .search-field:focused {
+    -fx-border-color: #2dd4bf;
+    -fx-background-color: #0a0f1e;
+}
+
+/* --- Dark Notification Card --- */
+.dark-theme .notification-card {
+    -fx-background-color: #111827;
+    -fx-border-color: #2A3544;
+}
+
+.dark-theme .notification-card-unread {
+    -fx-background-color: #0F2A32;
+    -fx-border-color: #2dd4bf;
+}
+
+/* --- Dark Notification Bell --- */
+.dark-theme .notification-bell {
+    -fx-background-color: #111827;
+}
+
+.dark-theme .notification-bell:hover {
+    -fx-background-color: #2A3544;
+}
+
+/* --- Dark Tables --- */
+.dark-theme .table-view {
+    -fx-background-color: #111827;
+    -fx-border-color: #2A3544;
+}
+
+.dark-theme .table-view .column-header {
+    -fx-background-color: #0a0f1e;
+}
+
+.dark-theme .table-row-cell {
+    -fx-background-color: #111827;
+    -fx-border-color: #2A3544;
+}
+
+.dark-theme .table-row-cell:hover {
+    -fx-background-color: #0F2A32;
+}
+
+/* --- Dark Scrollbar --- */
+.dark-theme .scroll-bar:vertical .thumb,
+.dark-theme .scroll-bar:horizontal .thumb {
+    -fx-background-color: #3A4554;
+}
+
+/* --- Dark Separator --- */
+.dark-theme .separator .line {
+    -fx-border-color: #2A3544;
+}
+
+/* --- Dark Empty State --- */
+.dark-theme .empty-state-icon {
+    -fx-text-fill: #3A4554;
+}
+
+.dark-theme .empty-state-message {
+    -fx-text-fill: #8899b4;
+}
+
+/* --- Dark Badge Adjustments --- */
+.dark-theme .badge-student {
+    -fx-background-color: #0F2A32;
+    -fx-text-fill: #67CDD8;
+}
+
+.dark-theme .badge-instructor {
+    -fx-background-color: #2A1A0F;
+    -fx-text-fill: #F06428;
+}
+
+/* --- Dark Charts --- */
+.dark-theme .chart {
+    -fx-background-color: #111827;
+}
+
+.dark-theme .chart-legend {
+    -fx-background-color: transparent;
+}
+
+.dark-theme .chart-title {
+    -fx-text-fill: #f0f6ff;
+}
+
+.dark-theme .axis-label {
+    -fx-text-fill: #ffffff;
+}
+
+.dark-theme .axis-tick-mark {
+    -fx-stroke: #3A4554;
+}
+
+/* --- Dark Loading --- */
+.dark-theme .loading-overlay {
+    -fx-background-color: rgba(15,20,25,0.9);
+}
+
+/* --- Dark ProgressBar --- */
+.dark-theme .progress-bar .track {
+    -fx-background-color: #2A3544;
+}
+
+/* --- Dark Avatar --- */
+.dark-theme .avatar-upload-card {
+    -fx-background-color: #111827;
+    -fx-border-color: #3A4554;
+}
+
+.dark-theme .avatar-upload-card:hover {
+    -fx-border-color: #2dd4bf;
+}
+
+/* --- Dark Chips --- */
+.dark-theme .chip {
+    -fx-background-color: #111827;
+    -fx-border-color: #3A4554;
+    -fx-text-fill: #4a6080;
+}
+
+.dark-theme .chip:hover {
+    -fx-background-color: #0F2A32;
+    -fx-border-color: #2dd4bf;
+}
+
+.dark-theme .chip-selected {
+    -fx-background-color: #2dd4bf;
+    -fx-text-fill: white;
+    -fx-border-color: #2dd4bf;
+}
+
+/* --- Dark Dial Code --- */
+.dark-theme .dial-code-label {
+    -fx-background-color: #111827;
+    -fx-text-fill: #67CDD8;
+    -fx-border-color: #3A4554;
+}
+
+/* --- Dark Profile Fields --- */
+.dark-theme .form-label {
+    -fx-text-fill: #4a6080;
+}
+
+/* --- Dark TextArea --- */
+.dark-theme .text-area {
+    -fx-background-color: #111827;
+    -fx-border-color: #2A3544;
+    -fx-text-fill: #f0f6ff;
+    -fx-prompt-text-fill: #8899b4;
+}
+
+/* ============================================
+   Dark Theme — Course Player
+   ============================================ */
+
+.dark-theme .player-header {
+    -fx-background-color: #111827;
+    -fx-border-color: transparent transparent #2A3544 transparent;
+}
+
+.dark-theme .player-lesson-title {
+    -fx-text-fill: #f0f6ff;
+}
+
+.dark-theme .player-breadcrumb {
+    -fx-text-fill: #8899b4;
+}
+
+.dark-theme .player-actions {
+    -fx-background-color: #111827;
+    -fx-border-color: transparent transparent #2A3544 transparent;
+}
+
+.dark-theme .player-action-btn {
+    -fx-background-color: #2A3544;
+    -fx-text-fill: rgba(255,255,255,0.14);
+}
+
+.dark-theme .player-action-btn:hover {
+    -fx-background-color: #3A4554;
+}
+
+.dark-theme .player-action-btn-primary {
+    -fx-background-color: #2dd4bf;
+    -fx-text-fill: white;
+}
+
+.dark-theme .player-tabs {
+    -fx-background-color: #111827;
+    -fx-border-color: transparent transparent #2A3544 transparent;
+}
+
+.dark-theme .player-tab {
+    -fx-text-fill: #8899b4;
+}
+
+.dark-theme .player-tab:hover {
+    -fx-background-color: #0a0f1e;
+    -fx-text-fill: rgba(255,255,255,0.14);
+}
+
+.dark-theme .player-tab-active {
+    -fx-text-fill: #67CDD8;
+}
+
+.dark-theme .player-tab-content {
+    -fx-background-color: #111827;
+}
+
+/* --- Dark Lesson Sidebar --- */
+.dark-theme .lesson-sidebar {
+    -fx-background-color: #111827;
+    -fx-border-color: #2A3544;
+}
+
+.dark-theme .lesson-sidebar-header {
+    -fx-background-color: #0a0f1e;
+    -fx-border-color: transparent transparent #2A3544 transparent;
+}
+
+.dark-theme .lesson-sidebar-title {
+    -fx-text-fill: #f0f6ff;
+}
+
+.dark-theme .section-accordion-card {
+    -fx-border-color: transparent transparent #2A3544 transparent;
+}
+
+.dark-theme .section-accordion-header:hover {
+    -fx-background-color: #0a0f1e;
+}
+
+.dark-theme .section-accordion-title {
+    -fx-text-fill: #f0f6ff;
+}
+
+.dark-theme .lesson-item:hover {
+    -fx-background-color: #0F2A32;
+}
+
+.dark-theme .lesson-item-active {
+    -fx-background-color: #0F2A32;
+}
+
+.dark-theme .lesson-item-title {
+    -fx-text-fill: rgba(255,255,255,0.14);
+}
+
+.dark-theme .lesson-item-active .lesson-item-title {
+    -fx-text-fill: #67CDD8;
+}
+
+/* --- Dark Upload Components --- */
+.dark-theme .upload-dropzone {
+    -fx-background-color: #0a0f1e;
+    -fx-border-color: #3A4554;
+}
+
+.dark-theme .upload-dropzone:hover {
+    -fx-background-color: #111827;
+    -fx-border-color: #2dd4bf;
+}
+
+.dark-theme .upload-dropzone-title {
+    -fx-text-fill: #f0f6ff;
+}
+
+.dark-theme .upload-progress-card {
+    -fx-background-color: #111827;
+    -fx-border-color: #2A3544;
+}
+
+.dark-theme .upload-progress-filename {
+    -fx-text-fill: #f0f6ff;
+}
+
+.dark-theme .upload-success-card {
+    -fx-background-color: #0A2E1F;
+    -fx-border-color: #10B981;
+}
+
+.dark-theme .upload-error-card {
+    -fx-background-color: #2E0A0A;
+    -fx-border-color: #EF4444;
+}
+
+.dark-theme .resource-file-card {
+    -fx-background-color: #111827;
+    -fx-border-color: #2A3544;
+}
+
+.dark-theme .resource-file-card:hover {
+    -fx-border-color: #2dd4bf;
+}
+
+.dark-theme .resource-file-title {
+    -fx-text-fill: #f0f6ff;
+}
+
+.dark-theme .upload-dialog {
+    -fx-background-color: #111827;
+}
+
+.dark-theme .upload-dialog-title {
+    -fx-text-fill: #f0f6ff;
+}
+
+/* --- Dark Quiz Builder --- */
+.dark-theme .question-type-card {
+    -fx-background-color: #111827;
+    -fx-border-color: #2A3544;
+}
+.dark-theme .question-type-card:hover {
+    -fx-background-color: #2A2050;
+    -fx-border-color: #7C3AED;
+}
+.dark-theme .question-type-label {
+    -fx-text-fill: rgba(255,255,255,0.14);
+}
+.dark-theme .question-editor-card {
+    -fx-background-color: #111827;
+    -fx-border-color: #4C1D95;
+}
+.dark-theme .question-list-card {
+    -fx-background-color: #111827;
+    -fx-border-color: #2A3544;
+}
+.dark-theme .question-list-card:hover {
+    -fx-border-color: #7C3AED;
+}
+.dark-theme .option-row {
+    -fx-background-color: #1E293B;
+    -fx-border-color: #334155;
+}
+.dark-theme .option-row-correct {
+    -fx-background-color: #064E3B;
+    -fx-border-color: #10B981;
+}
+.dark-theme .match-pair-row,
+.dark-theme .sequence-item {
+    -fx-background-color: #1E293B;
+    -fx-border-color: #334155;
+}
+.dark-theme .sequence-item:hover {
+    -fx-background-color: #2A2050;
+    -fx-border-color: #7C3AED;
+}
+.dark-theme .add-item-btn {
+    -fx-border-color: #475569;
+    -fx-text-fill: #4a6080;
+}
+.dark-theme .add-item-btn:hover {
+    -fx-border-color: #7C3AED;
+    -fx-text-fill: #7C3AED;
+    -fx-background-color: #2A2050;
+}
+.dark-theme .question-action-btn {
+    -fx-background-color: #1E293B;
+    -fx-text-fill: #4a6080;
+}
+.dark-theme .question-action-btn:hover {
+    -fx-background-color: #334155;
+    -fx-text-fill: #f0f6ff;
+}
+.dark-theme .image-preview-card {
+    -fx-background-color: #1E293B;
+    -fx-border-color: #334155;
+}
+.dark-theme .quiz-section-header {
+    -fx-text-fill: #f0f6ff;
+}

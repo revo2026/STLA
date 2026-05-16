@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<StackPane minHeight="560" minWidth="360" prefHeight="900" prefWidth="1200" style="-fx-background-color: #0a0f1e;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23.0.1" fx:controller="com.stla.ui.auth.RegisterController">
+
+    <Region maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true" style="-fx-background-color: radial-gradient(center 12% 10%, radius 55%, rgba(45,212,191,0.20), transparent 68%);" />
+    <Region maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mouseTransparent="true" style="-fx-background-color: radial-gradient(center 88% 90%, radius 50%, rgba(99,102,241,0.18), transparent 70%);" />
+
+    <ScrollPane fitToHeight="true" fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent; -fx-background: transparent; -fx-padding: 0;" vbarPolicy="AS_NEEDED">
+        <VBox alignment="TOP_CENTER" fillWidth="true" style="-fx-padding: 28 24 36 24; -fx-background-color: transparent;">
+
+            <HBox fx:id="authSplit" alignment="CENTER" maxWidth="1280" spacing="40" style="-fx-alignment: center;" VBox.vgrow="ALWAYS">
+
+                <VBox fx:id="brandPanel" alignment="CENTER_LEFT" maxWidth="480" minWidth="260" prefWidth="420" spacing="18" style="-fx-padding: 24 16 24 8;" HBox.hgrow="SOMETIMES">
+
+                    <HBox alignment="CENTER_LEFT" style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 999; -fx-padding: 8 16; -fx-border-color: rgba(255,255,255,0.10); -fx-border-radius: 999; -fx-border-width: 1;">
+                        <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #8899b4; -fx-letter-spacing: 1.2;" text="✦ STLA LEARNING PLATFORM" />
+                    </HBox>
+
+                    <VBox spacing="2" style="-fx-padding: 8 0 0 0;">
+                        <Label style="-fx-font-family: 'Georgia', 'Times New Roman', serif; -fx-font-size: 52px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;" text="Learn." />
+                        <Label style="-fx-font-family: 'Georgia', 'Times New Roman', serif; -fx-font-size: 52px; -fx-font-weight: bold; -fx-text-fill: #2dd4bf;" text="Teach." />
+                        <Label style="-fx-font-family: 'Georgia', 'Times New Roman', serif; -fx-font-size: 52px; -fx-font-weight: bold; -fx-text-fill: rgba(240,246,255,0.45);" text="Excel." />
+                    </VBox>
+
+                    <Label maxWidth="400" style="-fx-font-size: 14px; -fx-text-fill: #8899b4; -fx-line-spacing: 4;" text="Courses, quizzes, certificates and instructor tools — in one elegant desktop app." wrapText="true" />
+
+                    <Region maxHeight="2" maxWidth="120" minHeight="2" prefHeight="4" style="-fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9); -fx-background-radius: 2;" />
+
+                    <HBox alignment="CENTER_LEFT" spacing="10">
+                        <Label style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 999; -fx-padding: 6 14; -fx-font-size: 11px; -fx-text-fill: #8899b4; -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 999; -fx-border-width: 1;" text="Clean Arch" />
+                        <Label style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 999; -fx-padding: 6 14; -fx-font-size: 11px; -fx-text-fill: #8899b4; -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 999; -fx-border-width: 1;" text="Design Patterns" />
+                        <Label style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 999; -fx-padding: 6 14; -fx-font-size: 11px; -fx-text-fill: #8899b4; -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 999; -fx-border-width: 1;" text="Supabase" />
+                    </HBox>
+                </VBox>
+
+                <StackPane alignment="CENTER" minWidth="300" style="-fx-padding: 8 0;" HBox.hgrow="ALWAYS">
+                    <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background-color: transparent; -fx-background: transparent; -fx-padding: 0;" StackPane.alignment="CENTER">
+                        <VBox fx:id="registerCard" alignment="CENTER_LEFT" maxWidth="640" minWidth="300" prefWidth="580" spacing="12" style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 24; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 24; -fx-border-width: 1; -fx-padding: 32 28 28 28; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.45), 48, 0.08, 0, 20);">
+
+                            <VBox spacing="6">
+                                <Label style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;" text="Create Account" />
+                                <Label fx:id="stepDescription" style="-fx-font-size: 14px; -fx-text-fill: #8899b4;" text="Choose your role" wrapText="true" />
+                            </VBox>
+
+                            <HBox fx:id="stepperBar" alignment="CENTER_LEFT" spacing="4">
+                                <Label fx:id="stepLbl1" style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #2dd4bf;" text="① Role" />
+                                <Label style="-fx-text-fill: #4a6080; -fx-font-size: 11px;" text="›" />
+                                <Label fx:id="stepLbl2" style="-fx-font-size: 11px; -fx-text-fill: #4a6080;" text="② Account" />
+                                <Label style="-fx-text-fill: #4a6080; -fx-font-size: 11px;" text="›" />
+                                <Label fx:id="stepLbl3" style="-fx-font-size: 11px; -fx-text-fill: #4a6080;" text="③ Profile" />
+                                <Label style="-fx-text-fill: #4a6080; -fx-font-size: 11px;" text="›" />
+                                <Label fx:id="stepLbl4" style="-fx-font-size: 11px; -fx-text-fill: #4a6080;" text="④ Details" />
+                                <Label style="-fx-text-fill: #4a6080; -fx-font-size: 11px;" text="›" />
+                                <Label fx:id="stepLbl5" style="-fx-font-size: 11px; -fx-text-fill: #4a6080;" text="⑤ Review" />
+                                <Label managed="false" style="-fx-text-fill: #4a6080; -fx-font-size: 11px;" text="›" visible="false" />
+                                <Label fx:id="stepLbl6" managed="false" style="-fx-font-size: 11px; -fx-text-fill: #4a6080;" text="⑥ Review" visible="false" />
+                            </HBox>
+
+                            <!-- STEP 1: ROLE -->
+                            <VBox fx:id="step1Pane" spacing="12">
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="I WANT TO JOIN AS" />
+                                <HBox alignment="CENTER_LEFT" spacing="12">
+                                    <Button fx:id="roleStudentBtn" onAction="#selectStudent" prefHeight="48" prefWidth="230" style="-fx-background-radius: 12; -fx-border-radius: 12;" styleClass="role-btn, role-btn-active" text="🎓  I'm a Student" />
+                                    <Button fx:id="roleInstructorBtn" onAction="#selectInstructor" prefHeight="48" prefWidth="230" style="-fx-background-radius: 12; -fx-border-radius: 12;" styleClass="role-btn" text="👨‍🏫  I'm an Instructor" />
+                                </HBox>
+                                <Region prefHeight="6" />
+                                <Button maxWidth="1.7976931348623157E308" onAction="#goStep2" prefHeight="44" prefWidth="480" style="-fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9); -fx-text-fill: #0a0f1e; -fx-font-size: 14px; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand;" text="Next" />
+                            </VBox>
+
+                            <!-- STEP 2: ACCOUNT -->
+                            <VBox fx:id="step2Pane" managed="false" spacing="5" visible="false">
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="FULL NAME *" />
+                                <TextField fx:id="fullNameField" maxWidth="1.7976931348623157E308" prefHeight="42" promptText="e.g. Mohammed Al-Rashid" style="-fx-background-color: rgba(255,255,255,0.03); -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 12; -fx-background-radius: 12; -fx-text-fill: #f0f6ff; -fx-prompt-text-fill: #4a6080; -fx-padding: 10 14;" />
+                                <Label fx:id="fullNameErr" managed="false" style="-fx-font-size: 12px; -fx-text-fill: #f87171; -fx-background-color: rgba(248,113,113,0.12); -fx-background-radius: 8; -fx-padding: 6 10;" visible="false" />
+
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="EMAIL ADDRESS *" />
+                                <TextField fx:id="emailField" maxWidth="1.7976931348623157E308" prefHeight="42" promptText="Enter your email" style="-fx-background-color: rgba(255,255,255,0.03); -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 12; -fx-background-radius: 12; -fx-text-fill: #f0f6ff; -fx-prompt-text-fill: #4a6080; -fx-padding: 10 14;" />
+                                <Label fx:id="emailErr" managed="false" style="-fx-font-size: 12px; -fx-text-fill: #f87171; -fx-background-color: rgba(248,113,113,0.12); -fx-background-radius: 8; -fx-padding: 6 10;" visible="false" />
+
+                                <HBox spacing="10">
+                                    <VBox spacing="3" HBox.hgrow="ALWAYS">
+                                        <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="PASSWORD *" />
+                                        <PasswordField fx:id="passwordField" maxWidth="1.7976931348623157E308" prefHeight="42" promptText="Min 8 characters" style="-fx-background-color: rgba(255,255,255,0.03); -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 12; -fx-background-radius: 12; -fx-text-fill: #f0f6ff; -fx-prompt-text-fill: #4a6080; -fx-padding: 10 14;" />
+                                        <Label fx:id="passwordErr" managed="false" style="-fx-font-size: 12px; -fx-text-fill: #f87171; -fx-background-color: rgba(248,113,113,0.12); -fx-background-radius: 8; -fx-padding: 6 10;" visible="false" />
+                                    </VBox>
+                                    <VBox spacing="3" HBox.hgrow="ALWAYS">
+                                        <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="CONFIRM PASSWORD *" />
+                                        <PasswordField fx:id="confirmPasswordField" maxWidth="1.7976931348623157E308" prefHeight="42" promptText="Re-enter" style="-fx-background-color: rgba(255,255,255,0.03); -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 12; -fx-background-radius: 12; -fx-text-fill: #f0f6ff; -fx-prompt-text-fill: #4a6080; -fx-padding: 10 14;" />
+                                        <Label fx:id="confirmErr" managed="false" style="-fx-font-size: 12px; -fx-text-fill: #f87171; -fx-background-color: rgba(248,113,113,0.12); -fx-background-radius: 8; -fx-padding: 6 10;" visible="false" />
+                                    </VBox>
+                                </HBox>
+
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="COUNTRY *" />
+                                <ComboBox fx:id="countryCombo" maxWidth="1.7976931348623157E308" prefHeight="42" promptText="Select your country" style="-fx-background-color: rgba(255,255,255,0.03); -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 12; -fx-background-radius: 12;" />
+                                <Label fx:id="countryErr" managed="false" style="-fx-font-size: 12px; -fx-text-fill: #f87171; -fx-background-color: rgba(248,113,113,0.12); -fx-background-radius: 8; -fx-padding: 6 10;" visible="false" />
+
+                                <Label fx:id="phoneLbl" style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="PHONE NUMBER *" />
+                                <HBox alignment="CENTER_LEFT" spacing="0" style="-fx-background-color: rgba(255,255,255,0.03); -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 12; -fx-background-radius: 12; -fx-border-width: 1;">
+                                    <Label fx:id="dialCodeLabel" prefHeight="42" prefWidth="56" style="-fx-font-size: 13px; -fx-font-weight: bold; -fx-text-fill: #2dd4bf; -fx-padding: 0 0 0 14; -fx-alignment: center-left;" text="+1" />
+                                    <TextField fx:id="phoneField" maxWidth="1.7976931348623157E308" prefHeight="42" promptText="Enter phone number" style="-fx-background-color: transparent; -fx-border-color: transparent; -fx-text-fill: #f0f6ff; -fx-prompt-text-fill: #4a6080; -fx-padding: 10 14;" HBox.hgrow="ALWAYS" />
+                                </HBox>
+                                <Label fx:id="phoneErr" managed="false" style="-fx-font-size: 12px; -fx-text-fill: #f87171; -fx-background-color: rgba(248,113,113,0.12); -fx-background-radius: 8; -fx-padding: 6 10;" visible="false" />
+
+                                <Region prefHeight="3" />
+                                <HBox spacing="12">
+                                    <Button onAction="#goStep1" prefHeight="40" prefWidth="110" style="-fx-background-color: transparent; -fx-border-color: rgba(255,255,255,0.14); -fx-border-radius: 12; -fx-border-width: 1; -fx-text-fill: #8899b4; -fx-cursor: hand;" text="Back" />
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#goStep3" prefHeight="40" style="-fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9); -fx-text-fill: #0a0f1e; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand;" text="Next" HBox.hgrow="ALWAYS" />
+                                </HBox>
+                            </VBox>
+
+                            <!-- STEP 3: PROFILE -->
+                            <VBox fx:id="step3Pane" managed="false" spacing="6" visible="false">
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="PROFILE PHOTO" />
+                                <HBox alignment="CENTER_LEFT" spacing="16">
+                                    <StackPane fx:id="avatarCard" onMouseClicked="#handleAvatarUpload" style="-fx-background-color: rgba(255,255,255,0.04); -fx-background-radius: 16; -fx-border-color: rgba(255,255,255,0.10); -fx-border-radius: 16; -fx-border-width: 1; -fx-padding: 12; -fx-cursor: hand;">
+                                        <ImageView fx:id="avatarPreview" fitHeight="80" fitWidth="80" preserveRatio="true" style="-fx-cursor: hand;" />
+                                        <Label fx:id="avatarPlaceholder" style="-fx-font-size: 12px; -fx-text-fill: #4a6080; -fx-text-alignment: center; -fx-alignment: center;" text="📷&#10;Upload" />
+                                    </StackPane>
+                                    <VBox spacing="4">
+                                        <Button onAction="#handleAvatarUpload" style="-fx-background-color: transparent; -fx-border-color: rgba(255,255,255,0.14); -fx-border-radius: 10; -fx-border-width: 1; -fx-text-fill: #8899b4; -fx-font-size: 12px; -fx-cursor: hand; -fx-padding: 6 14;" text="Upload Photo" />
+                                        <Label style="-fx-font-size: 10px; -fx-text-fill: #4a6080;" text="PNG, JPG, JPEG, WEBP" />
+                                    </VBox>
+                                </HBox>
+
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="BIO" />
+                                <TextArea fx:id="bioField" maxWidth="1.7976931348623157E308" prefHeight="72" promptText="Tell us about yourself..." style="-fx-background-color: rgba(255,255,255,0.03); -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 12; -fx-background-radius: 12; -fx-text-fill: #f0f6ff; -fx-prompt-text-fill: #4a6080; -fx-padding: 10 14;" wrapText="true" />
+                                <Label fx:id="tzLabel" style="-fx-font-size: 11px; -fx-text-fill: #4a6080;" text="🕐 Timezone: auto-detected" />
+
+                                <Region prefHeight="3" />
+                                <HBox spacing="12">
+                                    <Button onAction="#goStep2" prefHeight="40" prefWidth="110" style="-fx-background-color: transparent; -fx-border-color: rgba(255,255,255,0.14); -fx-border-radius: 12; -fx-border-width: 1; -fx-text-fill: #8899b4; -fx-cursor: hand;" text="Back" />
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#goStep4" prefHeight="40" style="-fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9); -fx-text-fill: #0a0f1e; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand;" text="Next" HBox.hgrow="ALWAYS" />
+                                </HBox>
+                            </VBox>
+
+                            <!-- STEP 4A: STUDENT -->
+                            <VBox fx:id="step4StudentPane" managed="false" spacing="6" visible="false">
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="SELECT YOUR HEADLINE" />
+                                <FlowPane fx:id="headlineChips" hgap="6" vgap="6" />
+
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="SELECT YOUR INTERESTS *" />
+                                <FlowPane fx:id="interestChips" hgap="6" vgap="6" />
+                                <Label fx:id="interestsErr" managed="false" style="-fx-font-size: 12px; -fx-text-fill: #f87171; -fx-background-color: rgba(248,113,113,0.12); -fx-background-radius: 8; -fx-padding: 6 10;" visible="false" />
+
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="LEARNING GOALS *" />
+                                <FlowPane fx:id="goalChips" hgap="6" vgap="6" />
+                                <Label fx:id="goalsErr" managed="false" style="-fx-font-size: 12px; -fx-text-fill: #f87171; -fx-background-color: rgba(248,113,113,0.12); -fx-background-radius: 8; -fx-padding: 6 10;" visible="false" />
+
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="SKILL LEVEL" />
+                                <FlowPane fx:id="skillLevelChips" hgap="6" vgap="6" />
+
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="PREFERRED LANGUAGE" />
+                                <FlowPane fx:id="languageChips" hgap="6" vgap="6" />
+
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="DAILY LEARNING GOAL" />
+                                <FlowPane fx:id="dailyGoalChips" hgap="6" vgap="6" />
+
+                                <Region prefHeight="4" />
+                                <HBox spacing="12">
+                                    <Button onAction="#goStep3" prefHeight="40" prefWidth="110" style="-fx-background-color: transparent; -fx-border-color: rgba(255,255,255,0.14); -fx-border-radius: 12; -fx-border-width: 1; -fx-text-fill: #8899b4; -fx-cursor: hand;" text="Back" />
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#goStep5" prefHeight="40" style="-fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9); -fx-text-fill: #0a0f1e; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand;" text="Next" HBox.hgrow="ALWAYS" />
+                                </HBox>
+                            </VBox>
+
+                            <!-- STEP 4B: INSTRUCTOR -->
+                            <VBox fx:id="step4InstructorPane" managed="false" spacing="6" visible="false">
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="PROFESSIONAL TITLE *" />
+                                <TextField fx:id="titleField" maxWidth="1.7976931348623157E308" prefHeight="42" promptText="e.g. Senior Java Developer" style="-fx-background-color: rgba(255,255,255,0.03); -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 12; -fx-background-radius: 12; -fx-text-fill: #f0f6ff; -fx-prompt-text-fill: #4a6080; -fx-padding: 10 14;" />
+                                <Label fx:id="titleErr" managed="false" style="-fx-font-size: 12px; -fx-text-fill: #f87171; -fx-background-color: rgba(248,113,113,0.12); -fx-background-radius: 8; -fx-padding: 6 10;" visible="false" />
+
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="EXPERTISE TAGS *" />
+                                <TextField fx:id="expertiseField" maxWidth="1.7976931348623157E308" prefHeight="42" promptText="Java, Spring, Microservices" style="-fx-background-color: rgba(255,255,255,0.03); -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 12; -fx-background-radius: 12; -fx-text-fill: #f0f6ff; -fx-prompt-text-fill: #4a6080; -fx-padding: 10 14;" />
+                                <Label fx:id="expertiseErr" managed="false" style="-fx-font-size: 12px; -fx-text-fill: #f87171; -fx-background-color: rgba(248,113,113,0.12); -fx-background-radius: 8; -fx-padding: 6 10;" visible="false" />
+
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="YEARS OF EXPERIENCE" />
+                                <TextField fx:id="yearsExpField" maxWidth="1.7976931348623157E308" prefHeight="42" promptText="e.g. 10" style="-fx-background-color: rgba(255,255,255,0.03); -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 12; -fx-background-radius: 12; -fx-text-fill: #f0f6ff; -fx-prompt-text-fill: #4a6080; -fx-padding: 10 14;" />
+                                <Label fx:id="yearsErr" managed="false" style="-fx-font-size: 12px; -fx-text-fill: #f87171; -fx-background-color: rgba(248,113,113,0.12); -fx-background-radius: 8; -fx-padding: 6 10;" visible="false" />
+
+                                <Region prefHeight="4" />
+                                <HBox spacing="12">
+                                    <Button onAction="#goStep3" prefHeight="40" prefWidth="110" style="-fx-background-color: transparent; -fx-border-color: rgba(255,255,255,0.14); -fx-border-radius: 12; -fx-border-width: 1; -fx-text-fill: #8899b4; -fx-cursor: hand;" text="Back" />
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#goStep4b" prefHeight="40" style="-fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9); -fx-text-fill: #0a0f1e; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand;" text="Next" HBox.hgrow="ALWAYS" />
+                                </HBox>
+                            </VBox>
+
+                            <!-- STEP 4B-2: DOCUMENTS -->
+                            <VBox fx:id="step4bDocPane" managed="false" spacing="8" visible="false">
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="INSTRUCTOR BIO" />
+                                <TextArea fx:id="instructorBioField" maxWidth="1.7976931348623157E308" prefHeight="72" promptText="Describe your teaching experience and approach..." style="-fx-background-color: rgba(255,255,255,0.03); -fx-border-color: rgba(255,255,255,0.08); -fx-border-radius: 12; -fx-background-radius: 12; -fx-text-fill: #f0f6ff; -fx-prompt-text-fill: #4a6080; -fx-padding: 10 14;" wrapText="true" />
+
+                                <Label style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 2;" text="VERIFICATION DOCUMENTS *" />
+                                <Label style="-fx-font-size: 11px; -fx-text-fill: #4a6080;" text="Upload clear photos of your documents. All 4 are required." />
+
+                                <HBox spacing="12">
+                                    <VBox fx:id="idFrontCard" alignment="CENTER" onMouseClicked="#handleIdFrontUpload" spacing="6" style="-fx-background-color: rgba(255,255,255,0.04); -fx-background-radius: 14; -fx-border-color: rgba(255,255,255,0.10); -fx-border-radius: 14; -fx-border-width: 1; -fx-padding: 12; -fx-cursor: hand;" HBox.hgrow="ALWAYS">
+                                        <Label style="-fx-font-size: 28px;" text="🪪" />
+                                        <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #f0f6ff;" text="ID Front" />
+                                        <ImageView fx:id="idFrontPreview" fitHeight="40" fitWidth="60" preserveRatio="true" />
+                                        <Label fx:id="idFrontLabel" style="-fx-font-size: 10px; -fx-text-fill: #4a6080;" text="Click to upload" />
+                                        <Button onAction="#handleIdFrontUpload" style="-fx-background-color: transparent; -fx-border-color: rgba(255,255,255,0.14); -fx-border-radius: 8; -fx-border-width: 1; -fx-text-fill: #8899b4; -fx-font-size: 11px; -fx-cursor: hand; -fx-padding: 4 12;" text="Upload" />
+                                    </VBox>
+                                    <VBox fx:id="idBackCard" alignment="CENTER" onMouseClicked="#handleIdBackUpload" spacing="6" style="-fx-background-color: rgba(255,255,255,0.04); -fx-background-radius: 14; -fx-border-color: rgba(255,255,255,0.10); -fx-border-radius: 14; -fx-border-width: 1; -fx-padding: 12; -fx-cursor: hand;" HBox.hgrow="ALWAYS">
+                                        <Label style="-fx-font-size: 28px;" text="🪪" />
+                                        <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #f0f6ff;" text="ID Back" />
+                                        <ImageView fx:id="idBackPreview" fitHeight="40" fitWidth="60" preserveRatio="true" />
+                                        <Label fx:id="idBackLabel" style="-fx-font-size: 10px; -fx-text-fill: #4a6080;" text="Click to upload" />
+                                        <Button onAction="#handleIdBackUpload" style="-fx-background-color: transparent; -fx-border-color: rgba(255,255,255,0.14); -fx-border-radius: 8; -fx-border-width: 1; -fx-text-fill: #8899b4; -fx-font-size: 11px; -fx-cursor: hand; -fx-padding: 4 12;" text="Upload" />
+                                    </VBox>
+                                </HBox>
+                                <HBox spacing="12">
+                                    <VBox fx:id="certCard" alignment="CENTER" onMouseClicked="#handleCertUpload" spacing="6" style="-fx-background-color: rgba(255,255,255,0.04); -fx-background-radius: 14; -fx-border-color: rgba(255,255,255,0.10); -fx-border-radius: 14; -fx-border-width: 1; -fx-padding: 12; -fx-cursor: hand;" HBox.hgrow="ALWAYS">
+                                        <Label style="-fx-font-size: 28px;" text="📜" />
+                                        <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #f0f6ff;" text="Certificate" />
+                                        <ImageView fx:id="certPreview" fitHeight="40" fitWidth="60" preserveRatio="true" />
+                                        <Label fx:id="certLabel" style="-fx-font-size: 10px; -fx-text-fill: #4a6080;" text="Click to upload" />
+                                        <Button onAction="#handleCertUpload" style="-fx-background-color: transparent; -fx-border-color: rgba(255,255,255,0.14); -fx-border-radius: 8; -fx-border-width: 1; -fx-text-fill: #8899b4; -fx-font-size: 11px; -fx-cursor: hand; -fx-padding: 4 12;" text="Upload" />
+                                    </VBox>
+                                    <VBox fx:id="cvCard" alignment="CENTER" onMouseClicked="#handleCvUpload" spacing="6" style="-fx-background-color: rgba(255,255,255,0.04); -fx-background-radius: 14; -fx-border-color: rgba(255,255,255,0.10); -fx-border-radius: 14; -fx-border-width: 1; -fx-padding: 12; -fx-cursor: hand;" HBox.hgrow="ALWAYS">
+                                        <Label style="-fx-font-size: 28px;" text="📄" />
+                                        <Label style="-fx-font-weight: bold; -fx-font-size: 12px; -fx-text-fill: #f0f6ff;" text="CV / Resume" />
+                                        <Label fx:id="cvLabel" style="-fx-font-size: 10px; -fx-text-fill: #4a6080;" text="PDF, DOC, DOCX" />
+                                        <Button onAction="#handleCvUpload" style="-fx-background-color: transparent; -fx-border-color: rgba(255,255,255,0.14); -fx-border-radius: 8; -fx-border-width: 1; -fx-text-fill: #8899b4; -fx-font-size: 11px; -fx-cursor: hand; -fx-padding: 4 12;" text="Upload" />
+                                    </VBox>
+                                </HBox>
+                                <Label fx:id="docsErr" managed="false" style="-fx-font-size: 12px; -fx-text-fill: #f87171; -fx-background-color: rgba(248,113,113,0.12); -fx-background-radius: 8; -fx-padding: 6 10;" visible="false" />
+
+                                <Region prefHeight="4" />
+                                <HBox spacing="12">
+                                    <Button onAction="#goStep4" prefHeight="40" prefWidth="110" style="-fx-background-color: transparent; -fx-border-color: rgba(255,255,255,0.14); -fx-border-radius: 12; -fx-border-width: 1; -fx-text-fill: #8899b4; -fx-cursor: hand;" text="Back" />
+                                    <Button maxWidth="1.7976931348623157E308" onAction="#goStep5" prefHeight="40" style="-fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9); -fx-text-fill: #0a0f1e; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand;" text="Next" HBox.hgrow="ALWAYS" />
+                                </HBox>
+                            </VBox>
+
+                            <!-- STEP 5: REVIEW -->
+                            <VBox fx:id="step5Pane" managed="false" spacing="4" visible="false">
+                                <Label style="-fx-font-size: 16px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;" text="Review Your Information" />
+                                <Label fx:id="rvRole" style="-fx-font-size: 12px; -fx-text-fill: #8899b4;" wrapText="true" />
+                                <Label fx:id="rvName" style="-fx-font-size: 12px; -fx-text-fill: #8899b4;" wrapText="true" />
+                                <Label fx:id="rvEmail" style="-fx-font-size: 12px; -fx-text-fill: #8899b4;" wrapText="true" />
+                                <Label fx:id="rvPhone" style="-fx-font-size: 12px; -fx-text-fill: #8899b4;" wrapText="true" />
+                                <Label fx:id="rvCountry" style="-fx-font-size: 12px; -fx-text-fill: #8899b4;" wrapText="true" />
+                                <Label fx:id="rvBio" style="-fx-font-size: 12px; -fx-text-fill: #8899b4;" wrapText="true" />
+                                <Label fx:id="rvExtra1" style="-fx-font-size: 12px; -fx-text-fill: #4a6080;" wrapText="true" />
+                                <Label fx:id="rvExtra2" style="-fx-font-size: 12px; -fx-text-fill: #4a6080;" wrapText="true" />
+                                <Label fx:id="rvExtra3" style="-fx-font-size: 12px; -fx-text-fill: #4a6080;" wrapText="true" />
+                                <Label fx:id="rvExtra4" style="-fx-font-size: 12px; -fx-text-fill: #4a6080;" wrapText="true" />
+                                <Label fx:id="rvExtra5" style="-fx-font-size: 12px; -fx-text-fill: #4a6080;" wrapText="true" />
+                                <Label fx:id="rvExtra6" style="-fx-font-size: 12px; -fx-text-fill: #4a6080;" wrapText="true" />
+                                <Region prefHeight="4" />
+                                <HBox spacing="12">
+                                    <Button onAction="#goStep4" prefHeight="40" prefWidth="110" style="-fx-background-color: transparent; -fx-border-color: rgba(255,255,255,0.14); -fx-border-radius: 12; -fx-border-width: 1; -fx-text-fill: #8899b4; -fx-cursor: hand;" text="Edit" />
+                                    <Button fx:id="registerButton" maxWidth="1.7976931348623157E308" onAction="#handleRegister" prefHeight="42" style="-fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9); -fx-text-fill: #0a0f1e; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand;" text="Confirm Registration" HBox.hgrow="ALWAYS" />
+                                </HBox>
+                                <ProgressIndicator fx:id="regLoading" managed="false" prefHeight="24" prefWidth="24" style="-fx-progress-color: #2dd4bf;" visible="false" />
+                            </VBox>
+
+                            <!-- STEP 6: SUCCESS -->
+                            <VBox fx:id="step6Pane" alignment="CENTER" managed="false" spacing="12" visible="false">
+                                <Label style="-fx-font-size: 56px;" text="✅" />
+                                <Label style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #2dd4bf;" text="Registration Successful!" />
+                                <Label fx:id="successMsg" alignment="CENTER" style="-fx-font-size: 14px; -fx-text-fill: #8899b4;" text="Welcome!" wrapText="true" />
+                                <Region prefHeight="8" />
+                                <Button onAction="#goToDashboard" prefHeight="44" prefWidth="300" style="-fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9); -fx-text-fill: #0a0f1e; -fx-font-weight: bold; -fx-background-radius: 12; -fx-border-radius: 12; -fx-cursor: hand;" text="Go to Dashboard" />
+                            </VBox>
+
+                            <Label fx:id="globalError" managed="false" maxWidth="1.7976931348623157E308" style="-fx-font-size: 12px; -fx-text-fill: #f87171; -fx-background-color: rgba(248,113,113,0.12); -fx-background-radius: 10; -fx-padding: 10 14;" visible="false" wrapText="true" />
+
+                            <HBox alignment="CENTER" spacing="12">
+                                <Region maxHeight="1" minHeight="1" style="-fx-background-color: rgba(255,255,255,0.10);" HBox.hgrow="ALWAYS" />
+                                <Label style="-fx-font-size: 11px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 1.5;" text="OR" />
+                                <Region maxHeight="1" minHeight="1" style="-fx-background-color: rgba(255,255,255,0.10);" HBox.hgrow="ALWAYS" />
+                            </HBox>
+
+                            <HBox fx:id="loginLink" alignment="CENTER" spacing="4">
+                                <Label style="-fx-font-size: 13px; -fx-text-fill: #8899b4;" text="Already have an account?" />
+                                <Button onAction="#goToLogin" style="-fx-text-fill: #2dd4bf; -fx-underline: true; -fx-background-color: transparent;" styleClass="link-btn" text="Sign In" />
+                            </HBox>
+
+                            <HBox alignment="CENTER" spacing="4" style="-fx-padding: 4 0 0 0;">
+                                <Label style="-fx-font-size: 12px; -fx-text-fill: #4a6080;" text="Powered by" />
+                                <Label style="-fx-font-size: 12px; -fx-font-weight: bold; -fx-text-fill: #2dd4bf;" text="Supabase" />
+                            </HBox>
+                     <opaqueInsets>
+                        <Insets top="100.0" />
+                     </opaqueInsets>
+                        </VBox>
+                  <opaqueInsets>
+                     <Insets />
+                  </opaqueInsets>
+                  <StackPane.margin>
+                     <Insets top="200.0" />
+                  </StackPane.margin>
+                    </ScrollPane>
+                </StackPane>
+            </HBox>
+        </VBox>
+    </ScrollPane>
+</StackPane>

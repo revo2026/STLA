@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.student.PaymentSuccessController"
+      styleClass="success-root" alignment="CENTER" spacing="24">
+    <Label text="✅" styleClass="success-icon"/>
+    <Label text="Payment Successful!" style="-fx-font-size: 28px; -fx-font-weight: bold; -fx-text-fill: #059669;"/>
+    <Label text="You're enrolled! Course access is now unlocked." styleClass="text-secondary"/>
+
+    <VBox styleClass="receipt-card" spacing="10" alignment="CENTER_LEFT">
+        <Label text="Receipt" styleClass="section-title"/>
+        <HBox><Label text="Student: " styleClass="text-secondary"/><Label fx:id="studentLabel"/></HBox>
+        <HBox><Label text="Course: " styleClass="text-secondary"/><Label fx:id="courseLabel"/></HBox>
+        <HBox><Label text="Amount: " styleClass="text-secondary"/><Label fx:id="amountLabel" styleClass="checkout-price"/></HBox>
+        <HBox><Label text="Method: " styleClass="text-secondary"/><Label fx:id="methodLabel"/></HBox>
+        <HBox><Label text="Transaction: " styleClass="text-secondary"/><Label fx:id="txnLabel"/></HBox>
+        <HBox><Label text="Date: " styleClass="text-secondary"/><Label fx:id="dateLabel"/></HBox>
+    </VBox>
+
+    <VBox fx:id="successRoot" managed="false" visible="false"/>
+    <Button text="Continue Learning" styleClass="btn-accent" onAction="#handleContinue"/>
+</VBox>

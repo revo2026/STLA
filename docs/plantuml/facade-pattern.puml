@@ -1,0 +1,80 @@
+@startuml STLA_Facade_Pattern
+title STLA Desktop — Facade Pattern
+skinparam classAttributeIconSize 0
+
+package "com.stla.patterns.facade" {
+  class EnrollmentFacade <<Facade>> {
+    - paymentService: PaymentService
+  - gatewayOnly: boolean
+    + purchaseCourse(studentId, courseId, amount, strategy, ...): PurchaseResult
+    + {static} forGatewayTesting(): EnrollmentFacade
+  }
+
+  class CoursePublishFacade <<Facade>> {
+    - courseRepo: CourseRepositoryImpl
+    - instructorRepo: InstructorRepositoryImpl
+    - notificationService: NotificationService
+    + saveDraft(course): void
+    + submitForApproval(courseId, instructorId): boolean
+    + approveCourse(courseId, adminId, note): boolean
+    + rejectCourse(courseId, adminId, reason): boolean
+  }
+
+  note as NMissing
+    **CourseApprovalFacade** — Class not found in current codebase
+    (approval is CoursePublishFacade.approveCourse)
+
+    **PaymentFacade** — Class not found in current codebase
+    (payment orchestration is EnrollmentFacade + PaymentService)
+  end note
+}
+
+EnrollmentFacade --> PaymentService
+EnrollmentFacade ..> PaymentStrategy
+
+CoursePublishFacade --> CourseRepositoryImpl
+CoursePublishFacade --> InstructorRepositoryImpl
+CoursePublishFacade --> NotificationService
+CoursePublishFacade ..> EventBus
+
+package "com.stla.patterns.strategy" {
+  interface PaymentStrategy
+}
+
+package "com.stla.data.repositories" {
+  class CourseRepositoryImpl
+  class InstructorRepositoryImpl
+}
+
+package "com.stla.services" {
+  class PaymentService
+  class NotificationService
+}
+
+package "com.stla.patterns.observer" {
+  class EventBus
+}
+
+package "com.stla.ui.student" {
+  class CheckoutController
+}
+
+package "com.stla.ui.instructor" {
+  class AddCourseController
+}
+
+package "com.stla.ui.admin" {
+  class CourseReviewDetailController
+}
+
+CheckoutController --> EnrollmentFacade
+AddCourseController --> CoursePublishFacade
+CourseReviewDetailController --> CoursePublishFacade
+
+note bottom of EnrollmentFacade
+  Simplified interface for checkout:
+  payment validation + enrollment + wallet + events
+  hidden behind one purchaseCourse() call.
+end note
+
+@enduml

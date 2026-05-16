@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<ScrollPane xmlns:fx="http://javafx.com/fxml" fitToWidth="true" hbarPolicy="NEVER"
+            fx:controller="com.stla.ui.student.StudentQuizzesController" styleClass="quiz-page">
+    <VBox spacing="20" style="-fx-padding: 28 32;">
+        <VBox spacing="6">
+            <Label text="My Quizzes" styleClass="heading-1"/>
+            <Label text="Quizzes from your enrolled courses" styleClass="text-secondary"/>
+        </VBox>
+        <VBox fx:id="quizzesContainer" spacing="16"/>
+    </VBox>
+</ScrollPane>

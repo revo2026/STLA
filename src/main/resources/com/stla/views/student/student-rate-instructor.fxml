@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<VBox xmlns:fx="http://javafx.com/fxml" fx:controller="com.stla.ui.student.StudentRateInstructorController"
+      spacing="0" styleClass="review-write-page"
+      stylesheets="@../../css/app.css, @../../css/cards.css, @../../css/buttons.css, @../../css/forms.css, @../../css/reviews.css"
+      style="-fx-background-color: #0a0f1e;">
+
+    <StackPane VBox.vgrow="ALWAYS" style="-fx-background-color: #0a0f1e; -fx-min-height: 0;">
+        <Region mouseTransparent="true" maxWidth="1.7976931348623157E308" maxHeight="1.7976931348623157E308"
+                style="-fx-background-color: radial-gradient(center 14% 18%, radius 52%, rgba(45,212,191,0.16), transparent 68%);"/>
+        <Region mouseTransparent="true" maxWidth="1.7976931348623157E308" maxHeight="1.7976931348623157E308"
+                style="-fx-background-color: radial-gradient(center 88% 82%, radius 48%, rgba(99,102,241,0.14), transparent 65%);"/>
+
+        <ScrollPane fitToWidth="true" fitToHeight="true" hbarPolicy="NEVER" vbarPolicy="AS_NEEDED"
+                    maxWidth="1.7976931348623157E308" maxHeight="1.7976931348623157E308"
+                    style="-fx-background-color: transparent; -fx-background: transparent; -fx-padding: 0;">
+            <HBox alignment="TOP_CENTER" style="-fx-background-color: transparent;">
+                <VBox alignment="TOP_CENTER" spacing="24" maxWidth="900" minWidth="320" prefWidth="900"
+                      style="-fx-padding: 40 24 48 24;">
+
+                    <!-- Hero -->
+                    <VBox spacing="16" style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 24; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 24; -fx-border-width: 1; -fx-padding: 24 28 28 28; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.38), 48, 0.10, 0, 16);"
+                          maxWidth="900">
+                        <HBox alignment="CENTER_LEFT" spacing="12">
+                            <Button fx:id="backBtn" text="Back to My Courses" styleClass="review-back-btn" onAction="#handleBack"
+                                    style="-fx-background-color: rgba(255,255,255,0.06); -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 12; -fx-border-width: 1; -fx-text-fill: #8899b4; -fx-cursor: hand;"/>
+                            <Region HBox.hgrow="ALWAYS"/>
+                        </HBox>
+                        <Label fx:id="pageTitleLabel" text="Rate Instructor"
+                               style="-fx-font-size: 34px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;"/>
+                        <Label fx:id="pageSubtitleLabel" text="Share your experience with this course and instructor" wrapText="true"
+                               style="-fx-font-size: 15px; -fx-text-fill: #8899b4; -fx-line-spacing: 4;"/>
+                        <Region minHeight="3" maxWidth="120" prefHeight="3" maxHeight="3"
+                                style="-fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9); -fx-background-radius: 2;"/>
+                    </VBox>
+
+                    <!-- Main review card -->
+                    <VBox spacing="28" maxWidth="900"
+                          style="-fx-background-color: rgba(255,255,255,0.06); -fx-background-radius: 24; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 24; -fx-border-width: 1; -fx-padding: 36 40 40 40; -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.38), 48, 0.10, 0, 16);">
+
+                        <!-- Course info -->
+                        <VBox spacing="10" style="-fx-background-color: rgba(255,255,255,0.04); -fx-background-radius: 16; -fx-border-color: rgba(45,212,191,0.15); -fx-border-radius: 16; -fx-border-width: 1; -fx-padding: 18 20;">
+                            <Label text="COURSE" style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 1.8;"/>
+                            <Label fx:id="courseTitleLabel" text="Course title" wrapText="true"
+                                   style="-fx-font-size: 22px; -fx-font-weight: bold; -fx-text-fill: #f0f6ff;"/>
+                            <Label fx:id="instructorLabel" text="Instructor" wrapText="true"
+                                   style="-fx-font-size: 14px; -fx-text-fill: #8899b4;"/>
+                        </VBox>
+
+                        <!-- Stars -->
+                        <VBox spacing="12" alignment="CENTER">
+                            <Label text="YOUR RATING" style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 1.8;"/>
+                            <HBox alignment="CENTER" style="-fx-background-color: rgba(255,255,255,0.08); -fx-background-radius: 16; -fx-border-color: rgba(255,255,255,0.10); -fx-border-radius: 16; -fx-border-width: 1; -fx-padding: 16 22;">
+                                <HBox fx:id="starRatingBox" spacing="14" alignment="CENTER"/>
+                            </HBox>
+                            <Label fx:id="ratingHintLabel" text="Tap a star to rate"
+                                   style="-fx-font-size: 13px; -fx-text-fill: #8899b4; -fx-text-alignment: center; -fx-wrap-text: true;" textAlignment="CENTER"/>
+                        </VBox>
+
+                        <!-- Title -->
+                        <VBox spacing="8">
+                            <Label text="REVIEW TITLE" style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 1.8;"/>
+                            <Label text="Optional — a short headline for your review" style="-fx-font-size: 13px; -fx-text-fill: #8899b4;"/>
+                            <TextField fx:id="titleField" promptText="e.g. Great instructor, very clear explanations" prefHeight="52"
+                                       style="-fx-background-color: rgba(255,255,255,0.08); -fx-border-color: rgba(255,255,255,0.14); -fx-border-radius: 14; -fx-background-radius: 14; -fx-text-fill: #f0f6ff; -fx-prompt-text-fill: #4a6080; -fx-padding: 14 18; -fx-font-size: 14px;"/>
+                        </VBox>
+
+                        <!-- Comment -->
+                        <VBox spacing="8" VBox.vgrow="ALWAYS">
+                            <Label text="YOUR REVIEW" style="-fx-font-family: 'Consolas', monospace; -fx-font-size: 10px; -fx-font-weight: bold; -fx-text-fill: #4a6080; -fx-letter-spacing: 1.8;"/>
+                            <Label text="What did you like about the instructor and course?" style="-fx-font-size: 13px; -fx-text-fill: #8899b4;"/>
+                            <TextArea fx:id="commentArea" promptText="Share your experience with this course and instructor..."
+                                      wrapText="true" prefRowCount="8" minHeight="220" VBox.vgrow="ALWAYS"
+                                      style="-fx-background-color: rgba(255,255,255,0.08); -fx-control-inner-background: rgba(255,255,255,0.08); -fx-border-color: rgba(255,255,255,0.14); -fx-border-radius: 14; -fx-background-radius: 14; -fx-text-fill: #f0f6ff; -fx-prompt-text-fill: #4a6080; -fx-padding: 14 18; -fx-font-size: 14px;"/>
+                        </VBox>
+
+                        <Label fx:id="formErrorLabel" text="" wrapText="true" visible="false" managed="false" maxWidth="1.7976931348623157E308"
+                               style="-fx-font-size: 13px; -fx-text-fill: #ff6b6b; -fx-background-color: rgba(239,68,68,0.10); -fx-border-color: rgba(239,68,68,0.25); -fx-border-radius: 12; -fx-background-radius: 12; -fx-padding: 12 16;"/>
+
+                        <FlowPane hgap="14" vgap="12" alignment="CENTER_RIGHT" prefWrapLength="320" columnHalignment="RIGHT">
+                            <Button fx:id="cancelBtn" text="Cancel" styleClass="btn-outline" onAction="#handleBack"
+                                    prefHeight="48" minWidth="120"
+                                    style="-fx-background-color: transparent; -fx-border-color: rgba(255,255,255,0.12); -fx-border-radius: 14; -fx-border-width: 1; -fx-text-fill: #8899b4; -fx-font-weight: bold; -fx-cursor: hand;"/>
+                            <ProgressIndicator fx:id="submitLoading" prefWidth="28" prefHeight="28" visible="false" managed="false"
+                                               style="-fx-progress-color: #2dd4bf;"/>
+                            <Button fx:id="submitBtn" text="Submit Review" onAction="#handleSubmit"
+                                    prefHeight="50" minWidth="200"
+                                    style="-fx-background-color: linear-gradient(to right, #2dd4bf, #0ea5e9); -fx-text-fill: #061018; -fx-font-size: 15px; -fx-font-weight: bold; -fx-background-radius: 14; -fx-border-radius: 14; -fx-cursor: hand; -fx-padding: 12 24; -fx-effect: dropshadow(gaussian, rgba(45,212,191,0.40), 20, 0.15, 0, 4);"/>
+                        </FlowPane>
+                    </VBox>
+                </VBox>
+            </HBox>
+        </ScrollPane>
+    </StackPane>
+</VBox>

@@ -1,0 +1,71 @@
+/* ============================================
+   STLA Desktop — Table Styles (Premium Dark)
+   ============================================ */
+
+.table-view {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+    -fx-border-color: rgba(255, 255, 255, 0.12);
+    -fx-border-radius: 16;
+    -fx-background-radius: 16;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.28), 24, 0.08, 0, 8);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-background-radius: 16 16 0 0;
+}
+
+.table-view .column-header {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent rgba(255, 255, 255, 0.08) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 12 16;
+}
+
+.table-view .column-header .label {
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #ffffff;
+    -fx-alignment: CENTER-LEFT;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent rgba(255, 255, 255, 0.06) transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 8 0;
+}
+
+.table-view .table-row-cell:hover {
+    -fx-background-color: rgba(45, 212, 191, 0.08);
+}
+
+.table-view .table-row-cell:selected {
+    -fx-background-color: rgba(45, 212, 191, 0.18);
+}
+
+.table-view .table-row-cell:selected .text {
+    -fx-fill: #f0f6ff;
+}
+
+.table-view .table-cell {
+    -fx-padding: 8 16;
+    -fx-font-size: 13px;
+    -fx-text-fill: #f0f6ff;
+    -fx-alignment: CENTER-LEFT;
+}
+
+.table-view .table-row-cell:empty {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-view .placeholder .label {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 14px;
+}
+
+.table-view .filler {
+    -fx-background-color: rgba(255, 255, 255, 0.04);
+}
