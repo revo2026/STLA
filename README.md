@@ -19,21 +19,6 @@
 
 ---
 
-## 📸 Screenshots
-
-| Screen | Preview |
-|--------|---------|
-| Login | ![Login Screen](docs/screenshots/login.png) |
-| Student Dashboard | ![Student Dashboard](docs/screenshots/student-dashboard.png) |
-| Instructor Dashboard | ![Instructor Dashboard](docs/screenshots/instructor-dashboard.png) |
-| Admin Dashboard | ![Admin Dashboard](docs/screenshots/admin-dashboard.png) |
-| Course Player | ![Course Player](docs/screenshots/course-player.png) |
-| Quiz Builder | ![Quiz Builder](docs/screenshots/quiz-builder.png) |
-| Checkout & Payment | ![Checkout](docs/screenshots/checkout.png) |
-| Wallet & Withdrawals | ![Wallet](docs/screenshots/wallet.png) |
-
----
-
 ## ✨ Features
 
 ### 👨‍🎓 Student Features
@@ -418,19 +403,6 @@ mvn javafx:run
 
 ---
 
-## 📐 UML Diagrams
-
-Comprehensive UML documentation is available in the `docs/` directory:
-
-| Document | Description |
-|----------|-------------|
-| [`design-patterns-uml.md`](docs/design-patterns-uml.md) | PlantUML diagrams for all 8 design patterns |
-| [`full-project-uml.md`](docs/full-project-uml.md) | Complete project class diagrams |
-| [`uml-index.md`](docs/uml-index.md) | Index and navigation for all UML diagrams |
-| [`uml-relationships-guide.md`](docs/uml-relationships-guide.md) | Guide to class relationships |
-| [`plantuml/`](docs/plantuml/) | Raw PlantUML source files |
-
----
 
 ## 🔮 Future Improvements
 
